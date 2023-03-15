@@ -1,9 +1,9 @@
-import Home from "./pages/Home";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
+    <div className="bg-grey">
+      <SideBar />
     </div>
   );
 }
