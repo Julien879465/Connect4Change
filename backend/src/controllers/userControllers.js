@@ -78,7 +78,7 @@ const add = async (req, res) => {
   return models.user
     .insert(user)
     .then(([result]) => {
-      res.location(`/user/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
