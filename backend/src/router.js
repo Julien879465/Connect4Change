@@ -7,7 +7,7 @@ const userControllers = require("./controllers/userControllers");
 const phoneControllers = require("./controllers/phoneControllers");
 const totalControllers = require("./controllers/totalControllers");
 const stateControllers = require("./controllers/stateControllers");
-const calcControllers = require("./controllers/calcController");
+const calcControllers = require("./controllers/calcControllers");
 const auth = require("./middlewares/auth");
 
 router.get("/items", itemControllers.browse);
