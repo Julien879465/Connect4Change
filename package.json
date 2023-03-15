@@ -32,6 +32,7 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
-    "joi": "^17.8.4"
+    "joi": "^17.8.4",
+    "react-router-dom": "^6.9.0"
   }
 }
