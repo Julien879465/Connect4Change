@@ -36,31 +36,13 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`phone` (
   `antutu_indice` INT NOT NULL,
   `ram` INT NOT NULL,
   `storage` INT NOT NULL,
-  `antutu` INT NOT NULL,
   `url` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`idphone`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `hackathon`.`category`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hackathon`.`category` (
-  `idcategory` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `valMax` INT NULL DEFAULT NULL,
-  `valMin` INT NULL DEFAULT NULL,
-  `phone_idphone` INT NOT NULL,
-  PRIMARY KEY (`idcategory`, `phone_idphone`),
-  INDEX `fk_category_phone1_idx` (`phone_idphone` ASC) VISIBLE,
-  CONSTRAINT `fk_category_phone1`
-    FOREIGN KEY (`phone_idphone`)
-    REFERENCES `hackathon`.`phone` (`idphone`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
+
 
 
 -- -----------------------------------------------------
@@ -92,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`total` (
   `antutu_value` INT NULL DEFAULT NULL,
   `total` INT NULL DEFAULT NULL,
   `total_weighted` INT NULL DEFAULT NULL,
+  `category_name` VARCHAR(45) NULL DEFAULT NULL,
   `phone_idphone` INT NOT NULL,
   PRIMARY KEY (`idtotal`, `phone_idphone`),
   INDEX `fk_total_phone_idx` (`phone_idphone` ASC) VISIBLE,
