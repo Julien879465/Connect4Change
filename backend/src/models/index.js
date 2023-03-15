@@ -34,6 +34,7 @@ const UserManager = require("./UserManager");
 const TotalManager = require("./TotalManager");
 const PhoneManager = require("./PhoneManager");
 const StateManager = require("./StateManager");
+const CalcManager = require("./CalcManager");
 
 models.user = new UserManager();
 models.user.setDatabase(pool);
@@ -46,6 +47,9 @@ models.phone.setDatabase(pool);
 
 models.state = new StateManager();
 models.state.setDatabase(pool);
+
+models.calc = new CalcManager();
+models.calc.setDatabase(pool);
 
 models.item = new ItemManager();
 models.item.setDatabase(pool);

@@ -1,4 +1,5 @@
 const models = require("../models");
+const validateUser = require("../validator/userValidator");
 
 const { hashPassword, verifyPassword } = require("../services/hashingService");
 const { encodeJWT } = require("../services/jwtService");
@@ -36,6 +37,12 @@ const edit = (req, res) => {
 
   // TODO validations (length, format...)
 
+  const validationResult = validateUser(user);
+
+  if (validationResult) {
+    return res.status(400).send(validationResult);
+  }
+
   user.id = parseInt(req.params.id, 10);
 
   models.user
@@ -57,6 +64,12 @@ const add = async (req, res) => {
   const user = req.body;
 
   // TODO validations (length, format...)
+
+  const validationResult = validateUser(user);
+
+  if (validationResult.length) {
+    return res.status(400).send(validationResult);
+  }
 
   const hashedPassword = await hashPassword(req.body.password);
 
