@@ -15,3 +15,12 @@
         @apply h-full flex flex-col font-fira;
     }
 }
+
+a.active {
+    background-color: #006163;
+    color: white;
+}
+
+a.active img{
+    stroke: white;
+}
