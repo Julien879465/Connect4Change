@@ -2,14 +2,14 @@ import React from "react";
 
 function DescriptionTelephone() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
+    <div className="min-h-screen flex items-center justify-center px-4  bg-white rounded-lg shadow-2xl mb-8">
+      <div className="w-400 h-300">
         <img
           src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png"
           alt="Descripción de la imagen"
         />
       </div>
-      <div className="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
+      <div className="w-full max-w-400 h-auto max-h-300  bg-white shadow-xl">
         <div className="p-4 border-b">
           <h2 className="text-2xl ">Fiche technique</h2>
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
-function TelephonePage() {
+function PhoneCards() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-8">
       <div className="relative mx-auto w-full">
         <a
           href="/"
@@ -391,4 +391,4 @@ function TelephonePage() {
   );
 }
 
-export default TelephonePage;
+export default PhoneCards;
