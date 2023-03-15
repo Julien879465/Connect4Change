@@ -45,7 +45,7 @@ const edit = (req, res) => {
 
   user.id = parseInt(req.params.id, 10);
 
-  models.user
+  return models.user
     .update(user)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -75,7 +75,7 @@ const add = async (req, res) => {
 
   user.password = hashedPassword;
 
-  models.user
+  return models.user
     .insert(user)
     .then(([result]) => {
       res.location(`/user/${result.insertId}`).sendStatus(201);

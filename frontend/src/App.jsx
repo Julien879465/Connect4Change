@@ -2,7 +2,7 @@ import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="bg-grey">
+    <div className="bg-grey grow">
       <SideBar />
     </div>
   );
