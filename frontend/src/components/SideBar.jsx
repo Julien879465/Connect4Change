@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Images/LogoConnect.png";
 import arcEnCiel from "../assets/Images/Arc-en-ciel.png";
 import home from "../assets/Icons/home.svg";
@@ -8,8 +8,15 @@ import file from "../assets/Icons/file.svg";
 import help from "../assets/Icons/help-circle.svg";
 
 function SideBar() {
+  const shouldBeHiddenFor = ["/Connexion", "/Registration", "/Logout"];
+  const location = useLocation();
+
   return (
-    <div className="flex items-center h-full py-10">
+    <div
+      className={`flex items-center h-full py-10 ${
+        shouldBeHiddenFor.includes(location.pathname) ? "hidden" : ""
+      }`}
+    >
       <div className="flex ml-10 flex-col h-full w-full min-w-[200px] bg-white rounded-xl justify-between drop-shadow-4xl">
         <div className="flex flex-col">
           <img className="w-[60%] m-6 mb-20" src={logo} alt="logo" />
