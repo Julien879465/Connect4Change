@@ -5,11 +5,12 @@ import expressAPI from "../services/expressAPI";
 import toastError from "../services/toastService";
 
 import illustration from "../assets/Images/undraw_showing_support_re_5f2v 1.png";
+import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Connexion() {
   const navigate = useNavigate();
 
-  const [user, setUser] = useState("");
+  const { user, setUser } = useCurrentUserContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
