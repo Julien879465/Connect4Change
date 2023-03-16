@@ -1,12 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import QRCode from "react-qr-code";
 
 import FormButton from "../components/FormButton";
 import deco from "../assets/Images/deco.png";
-import tel1 from "../assets/Images/tel1.png";
-import tel2 from "../assets/Images/tel2.png";
-import tel3 from "../assets/Images/tel3.png";
-
-import CurrentDate from "../components/CurrentDate";
+import PhoneResult from "../components/PhoneResult";
 
 function Home() {
   const [marque, setMarque] = useState("");
@@ -15,104 +12,136 @@ function Home() {
   const [ponderation, setPonderation] = useState("");
   const [resultat, setResultat] = useState("");
   const [qrCode, setQrCode] = useState("");
+  const [showQrCode, setShowQrCode] = useState(false);
+  const [date, setDate] = useState(new Date());
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setShowQrCode(true);
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-use-before-define
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  const formattedTime = date
+    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    .replace(":", "h");
 
   return (
     <>
-      <div className="flex flex-col ">
-        <div className="flex flex-row ml-20 mb-20 mt-6">
-          <p className="text-2xl font-medium ">Accueil</p>
-          <img src={deco} alt="logo" className="w-6" />
-
-          <CurrentDate />
+      <div className="m-5">
+        <div className="ml-2 font-bold text-3xl font-jost flex items-center gap-4">
+          <span>Accueil</span>
+          <img src={deco} alt="Descripción de la imagen" />
+        </div>
+        <div className="pl-2 text-grey2 text-xs mb-8">
+          {date.toLocaleDateString()} {formattedTime}
         </div>
 
-        <div className="ml-24">
-          <h1>Derniers téléphones ajoutés</h1>
-          <div className="flex flex-row justify-evenly">
-            <img src={tel1} alt="tel1" className="w-[15%]" />
-            <img src={tel2} alt="tel1" className="w-[15%]" />
-            <img src={tel3} alt="tel1" className="w-[15%]" />
-          </div>
+        <div>
+          <h1 className="mt-10 mb-10">Derniers téléphones ajoutés</h1>
+          <PhoneResult />
         </div>
+        <div className="flex flex-col w-full pl-8 gap-4">
+          <h1 className="text-xl ">Ajouter un téléphone</h1>
+          <form className="flex flex-row justify-between ">
+            <div className=" flex flex-col justify-between">
+              <label>
+                <p className="text-lg">Marque du téléphone</p>
+                <input
+                  className="w-full p-2 border-solid border-2 border-grey-input rounded-lg  "
+                  type="text"
+                  id="marque"
+                  value={marque}
+                  onChange={(event) => setMarque(event.target.value)}
+                  required
+                ></input>
+              </label>
 
-        <form className="flex flex-row justify-evenly pt-24 ">
-          <div>
-            <h1 className="ml-24 decoration-4">Ajouter un téléphone</h1>
-            <label>
-              <p className="ml-24">Marque du téléphone</p>
-              <input
-                className=" border-solid border-2 border-grey-input rounded-lg ml-24 "
-                type="text"
-                id="marque"
-                value={marque}
-                onChange={(event) => setMarque(event.target.value)}
-                required
-              ></input>
-            </label>
+              <label>
+                <p className="text-lg">Modèle du téléphone</p>
+                <input
+                  className=" w-full p-2 border-solid border-2 border-grey-input rounded-lg "
+                  type="text"
+                  id="modèle"
+                  value={modele}
+                  onChange={(event) => setModele(event.target.value)}
+                  required
+                ></input>
+              </label>
+              <label>
+                <p className="text-lg">Indice Antutu</p>
+                <input
+                  className=" w-full p-2 border-solid border-2 border-grey-input rounded-lg "
+                  type="text"
+                  id="indice"
+                  value={indice}
+                  onChange={(event) => setIndice(event.target.value)}
+                  required
+                ></input>
+              </label>
+            </div>
+            <div>
+              <FormButton />
+            </div>
 
-            <label>
-              <p>Modèle du téléphone</p>
-              <input
-                className=" border-solid border-2 border-grey-input rounded-lg "
-                type="text"
-                id="modèle"
-                value={modele}
-                onChange={(event) => setModele(event.target.value)}
-                required
-              ></input>
-            </label>
-            <label>
-              <p>Indice Antutu</p>
-              <input
-                className=" border-solid border-2 border-grey-input rounded-lg "
-                type="text"
-                id="indice"
-                value={indice}
-                onChange={(event) => setIndice(event.target.value)}
-                required
-              ></input>
-            </label>
-          </div>
-          <div>
-            <FormButton />
-          </div>
-
-          <div>
-            <label>
-              <p>Pondération</p>
-              <input
-                className=" border-solid border-2 border-grey-input rounded-lg "
-                type="text"
-                id="ponderation"
-                value={ponderation}
-                onChange={(event) => setPonderation(event.target.value)}
-                required
-              ></input>
-            </label>
-            <label>
-              <p>Résultat</p>
-              <input
-                className=" border-solid border-2 border-grey-input rounded-lg "
-                type="text"
-                id="resultat"
-                value={resultat}
-                onChange={(event) => setResultat(event.target.value)}
-                required
-              ></input>
-            </label>
-            <button
-              className="bg-yellow rounded-xl block w-40 mt-10"
-              type="submit"
-              onClick={handleSubmit}
-            >
-              Afficher le QR code
-            </button>
-          </div>
-        </form>
+            <div className="flex flex-col justify-between">
+              <label>
+                <p className="text-lg">Pondération</p>
+                <input
+                  className="w-full p-2  border-solid border-2 border-grey-input rounded-lg "
+                  type="text"
+                  id="ponderation"
+                  value={ponderation}
+                  onChange={(event) => setPonderation(event.target.value)}
+                  required
+                ></input>
+              </label>
+              <label>
+                <p className="text-lg">Résultat</p>
+                <input
+                  className="w-full p-2 bg-grey3  border-solid border-2 border-grey-input rounded-lg "
+                  type="text"
+                  id="resultat"
+                  value={resultat}
+                  onChange={(event) => setResultat(event.target.value)}
+                  required
+                ></input>
+              </label>
+              <button
+                className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Afficher le QR code
+              </button>
+            </div>
+          </form>
+          {showQrCode && (
+            <div className="fixed top-0 left-0 h-full w-full flex items-center justify-center">
+              <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50"></div>
+              <div className="bg-white rounded-lg z-10">
+                <QRCode value={"salut"} />
+                <button
+                  className="text-red-500 hover:text-red-700 absolute top-0 right-0 p-2"
+                  onClick={() => setShowQrCode(false)}
+                >
+                  Fermer
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

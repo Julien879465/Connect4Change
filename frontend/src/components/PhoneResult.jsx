@@ -1,6 +1,6 @@
 import React from "react";
 
-function PhoneCards() {
+function PhoneResult() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-8">
       <div className="relative mx-auto w-full">
@@ -55,22 +55,10 @@ function PhoneCards() {
             </div>
 
             <div className="mt-8">
-              <p className="block text-gray-800">
-                <span className="block mt-2 xl:mt-0">RAM</span>
-              </p>
-              <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
-                <span className="block mt-2 xl:mt-0">Stockage</span>
-              </p>
-              <p className="block mt-2 text-xs ">
-                Date du calcul: 14 novembre 2021
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 mt-8">
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="text-white bg-main hover:bg-main-light w-full justify-between focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
                 >
                   Voir plus
                   <svg
@@ -87,13 +75,6 @@ function PhoneCards() {
                     />
                   </svg>
                 </button>
-              </div>
-
-              <div className="flex justify-end">
-                <p className="inline-block font-semibold text-primary whitespace-nowrap leading-tight rounded-xl">
-                  <span className="text-sm uppercase">$</span>
-                  <span className="text-lg">79</span>€
-                </p>
               </div>
             </div>
           </div>
@@ -152,22 +133,10 @@ function PhoneCards() {
             </div>
 
             <div className="mt-8">
-              <p className="block text-gray-800">
-                <span className="block mt-2 xl:mt-0">RAM</span>
-              </p>
-              <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
-                <span className="block mt-2 xl:mt-0">Stockage</span>
-              </p>
-              <p className="block mt-2 text-xs ">
-                Date du calcul: 14 novembre 2021
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 mt-8">
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="text-white bg-main hover:bg-main-light w-full justify-between  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
                 >
                   Voir plus
                   <svg
@@ -184,13 +153,6 @@ function PhoneCards() {
                     />
                   </svg>
                 </button>
-              </div>
-
-              <div className="flex justify-end">
-                <p className="inline-block font-semibold text-primary whitespace-nowrap leading-tight rounded-xl">
-                  <span className="text-sm uppercase">$</span>
-                  <span className="text-lg">79</span>€
-                </p>
               </div>
             </div>
           </div>
@@ -246,23 +208,11 @@ function PhoneCards() {
               </p>
             </div>
 
-            <div className="mt-8">
-              <p className="block text-gray-800">
-                <span className="block mt-2 xl:mt-0">RAM</span>
-              </p>
-              <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
-                <span className="block mt-2 xl:mt-0">Stockage</span>
-              </p>
-              <p className="block mt-2 text-xs ">
-                Date du calcul: 14 novembre 2021
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 mt-8">
+            <div className=" mt-8">
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="text-white bg-main hover:bg-main-light w-full justify-between focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
                 >
                   Voir plus
                   <svg
@@ -279,13 +229,6 @@ function PhoneCards() {
                     />
                   </svg>
                 </button>
-              </div>
-
-              <div className="flex justify-end">
-                <p className="inline-block font-semibold text-primary whitespace-nowrap leading-tight rounded-xl">
-                  <span className="text-sm uppercase">$</span>
-                  <span className="text-lg">79</span>€
-                </p>
               </div>
             </div>
           </div>
@@ -342,23 +285,11 @@ function PhoneCards() {
               </p>
             </div>
 
-            <div className="mt-8">
-              <p className="block text-gray-800">
-                <span className="block mt-2 xl:mt-0">RAM</span>
-              </p>
-              <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
-                <span className="block mt-2 xl:mt-0">Stockage</span>
-              </p>
-              <p className="block mt-2 text-xs ">
-                Date du calcul: 14 novembre 2021
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 mt-8">
+            <div className=" mt-8">
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="text-white bg-main hover:bg-main-light justify-between  w-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
                 >
                   Voir plus
                   <svg
@@ -376,13 +307,6 @@ function PhoneCards() {
                   </svg>
                 </button>
               </div>
-
-              <div className="flex justify-end">
-                <p className="inline-block font-semibold text-primary whitespace-nowrap leading-tight rounded-xl">
-                  <span className="text-sm uppercase">$</span>
-                  <span className="text-lg">79</span>€
-                </p>
-              </div>
             </div>
           </div>
         </a>
@@ -391,4 +315,4 @@ function PhoneCards() {
   );
 }
 
-export default PhoneCards;
+export default PhoneResult;

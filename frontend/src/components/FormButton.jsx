@@ -53,8 +53,8 @@ function FormButton() {
             key={r.id}
             type="button"
             onClick={() => handleToggleRam(r.id, !r.seen)}
-            className={`h-12 w-12 border-solid border-2 border-main rounded-lg ${
-              r.seen ? "bg-main text-white" : "active:none"
+            className={`h-12 w-12 border-solid border-2 border-main-light rounded-lg ${
+              r.seen ? "bg-main-light text-white" : "active:none"
             }`}
           >
             {r.id} Go
@@ -70,8 +70,8 @@ function FormButton() {
               key={s.id}
               type="button"
               onClick={() => handleToggleStockage(s.id, !s.seen)}
-              className={`h-12 w-12 border-solid border-2 border-main rounded-lg ${
-                s.seen ? "bg-main text-white" : "active:none"
+              className={`h-12 w-12 border-solid border-2 border-main-light rounded-lg ${
+                s.seen ? "bg-main-light text-white" : "active:none"
               }`}
             >
               {s.id} Go

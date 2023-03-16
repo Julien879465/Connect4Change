@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import deco from "../assets/Images/Deco.png";
-import PhoneCards from "../components/PhoneCards";
+import FaqQuestions from "../components/FaqQuestions";
 
-function PhonePage() {
+function FAQ() {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -24,8 +24,8 @@ function PhonePage() {
 
   return (
     <div className="m-5">
-      <div className=" font-bold text-2xl font-jost flex items-center gap-4">
-        <span>Téléphones</span>
+      <div className="ml-2 font-bold text-3xl font-jost flex items-center gap-4">
+        <span>FAQ</span>
         <img
           src={deco}
           alt="Descripción de la imagen"
@@ -35,10 +35,9 @@ function PhonePage() {
       <div className="pl-2 text-grey2 text-xs mb-8">
         {date.toLocaleDateString()} {formattedTime}
       </div>
-      <PhoneCards />
-      <PhoneCards />
+      <FaqQuestions />
     </div>
   );
 }
 
-export default PhonePage;
+export default FAQ;
