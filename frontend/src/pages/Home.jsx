@@ -127,7 +127,7 @@ function Home() {
         </form>
         {showQrCode && (
           <div className="fixed top-0 left-0 h-full w-full flex items-center justify-center">
-            {/* <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50"></div> */}
+            <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50" />
             <div className="bg-white rounded-lg z-10">
               <QRCode value="salut" />
               <button

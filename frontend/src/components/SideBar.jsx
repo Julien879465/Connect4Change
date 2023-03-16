@@ -17,7 +17,7 @@ function SideBar() {
         shouldBeHiddenFor.includes(location.pathname) ? "hidden" : ""
       }`}
     >
-      <div className="flex ml-10 flex-col h-full w-full min-w-[300px] bg-white rounded-xl justify-between drop-shadow-4xl">
+      <div className="flex ml-10 flex-col h-full w-[300px] bg-white rounded-xl justify-between drop-shadow-4xl">
         <div className="flex flex-col">
           <img className="w-[60%] m-6 mb-20" src={logo} alt="logo" />
           <div className="flex flex-col gap-6 font-medium">
