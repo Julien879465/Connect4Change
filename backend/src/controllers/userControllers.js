@@ -78,7 +78,7 @@ const add = async (req, res) => {
   return models.user
     .insert(user)
     .then(([result]) => {
-      res.location(`/user/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -115,7 +115,7 @@ const login = async (req, res) => {
 
     res.cookie("auth_token", token, { httpOnly: true, secure: false });
 
-    res.sendStatus(200);
+    res.send({ user: persistedUser[0] });
   } else {
     res.sendStatus(401);
   }
