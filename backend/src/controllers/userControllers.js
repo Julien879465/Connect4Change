@@ -115,6 +115,8 @@ const login = async (req, res) => {
 
     res.cookie("auth_token", token, { httpOnly: true, secure: false });
 
+    res.send({ user: persistedUser[0] });
+
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
