@@ -7,14 +7,12 @@ import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Registration from "./pages/Registration";
 import Logout from "./pages/Logout";
-import Navbar from "./components/Navbar";
 import OnePhone from "./pages/OnePhone";
 import PhonePage from "./pages/PhonePage";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Connexion" element={<Connexion />} />
