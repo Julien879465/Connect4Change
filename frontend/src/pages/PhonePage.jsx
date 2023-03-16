@@ -42,7 +42,6 @@ function PhonePage() {
         {date.toLocaleDateString()} {formattedTime}
       </div>
       <PhoneCards />
-      <PhoneCards />
     </div>
   );
 }
