@@ -62,7 +62,7 @@ function FormButton() {
         ))}
       </div>
 
-      <div className="block pt-5 pb-10">
+      <div className="block pt-5 b-10">
         <p>Stockage</p>
         <div className=" grid gap-2 grid-cols-4">
           {stockage.map((s) => (
