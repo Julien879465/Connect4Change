@@ -13,6 +13,7 @@ const app = express();
 // use some application-level middlewares
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const cors = require("cors");
@@ -33,7 +34,8 @@ app.use(router);
 
 // serve the `backend/public` folder for public resources
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use("/", express.static(path.join(__dirname, "../public")));
+app.use("/uploads", express.static(path.join(__dirname, "../public/uploads")));
 
 // serve REACT APP
 
