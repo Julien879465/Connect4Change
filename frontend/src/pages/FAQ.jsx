@@ -24,7 +24,7 @@ function FAQ() {
 
   return (
     <div className="m-5">
-      <div className="ml-2 font-bold text-3xl font-jost flex items-center gap-4">
+      <div className="mt-8 ml-2 font-bold text-5xl font-feli flex items-center gap-4">
         <span>FAQ</span>
         <img
           src={deco}

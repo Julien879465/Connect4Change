@@ -70,7 +70,7 @@ function PhoneCards() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="text-white bg-main hover:bg-main-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-7 py-2 text-center inline-flex items-center "
                 >
                   Voir plus
                   <svg
