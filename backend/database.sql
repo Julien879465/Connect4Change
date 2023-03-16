@@ -36,31 +36,17 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`phone` (
   `antutu_indice` INT NOT NULL,
   `ram` INT NOT NULL,
   `storage` INT NOT NULL,
-  `antutu` INT NOT NULL,
   `url` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`idphone`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `hackathon`.`category`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hackathon`.`category` (
-  `idcategory` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `valMax` INT NULL DEFAULT NULL,
-  `valMin` INT NULL DEFAULT NULL,
-  `phone_idphone` INT NOT NULL,
-  PRIMARY KEY (`idcategory`, `phone_idphone`),
-  INDEX `fk_category_phone1_idx` (`phone_idphone` ASC) VISIBLE,
-  CONSTRAINT `fk_category_phone1`
-    FOREIGN KEY (`phone_idphone`)
-    REFERENCES `hackathon`.`phone` (`idphone`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
+LOCK TABLES `phone` WRITE;
+/*!40000 ALTER TABLE `phone` DISABLE KEYS */;
+INSERT INTO `phone` VALUES (1,'Wiko','View 4 (v830)',6.52,'4G',10,92411,3,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png'),(2,'Samsung','GALAXY S10',6.1,'4G',9,415000,8,128,'https://www.indicereparabilite.fr/produit/smartphone-samsung-galaxy-s10/'),(3,'Huawei',' P20 Lite',5.84,'4G',8,74399,4,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/06/4-a-59-12.png'),(4,'XiamiI','MI 10',6.67,'5G',10,571288,8,256,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-56.png'),(5,'Nokia','7.2',6.3,'4G',9,148113,6,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-47.png'),(6,'Honor','9X Midnight Black',6.59,'4G',9,136599,4,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-46.png'),(7,'Oppo','A72',6.5,'4G',10,150413,4,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-39.png'),(8,'One plus','Nord n100',6.52,'4G',10,142188,4,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-35.png'),(9,'Huawei','Mate 30 pro',6.53,'5G',10,508699,8,256,'https://www.indicereparabilite.fr/wp-content/uploads/2021/06/4-a-59-10.png'),(10,'Wiko','Y61',6,'4G',10,50000,1,16,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-42.png');
+/*!40000 ALTER TABLE `phone` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 -- -----------------------------------------------------
@@ -92,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`total` (
   `antutu_value` INT NULL DEFAULT NULL,
   `total` INT NULL DEFAULT NULL,
   `total_weighted` INT NULL DEFAULT NULL,
+  `category_name` VARCHAR(45) NULL DEFAULT NULL,
   `phone_idphone` INT NOT NULL,
   PRIMARY KEY (`idtotal`, `phone_idphone`),
   INDEX `fk_total_phone_idx` (`phone_idphone` ASC) VISIBLE,

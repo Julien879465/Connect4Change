@@ -30,5 +30,8 @@
     "cross-env": "^7.0.3",
     "husky": "^8.0.3",
     "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "joi": "^17.8.4"
   }
 }
