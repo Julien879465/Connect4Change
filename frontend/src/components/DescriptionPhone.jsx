@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import left from "../assets/Images/chevron-left.svg";
 
-function DescriptionPhone() {
+function DescriptionPhone({ brand, ram, storage, url, model, screen, indice }) {
   return (
     <>
       <div>
@@ -15,10 +16,7 @@ function DescriptionPhone() {
       </div>
       <div className="min-h-screen flex items-center justify-center px-4  bg-white rounded-lg shadow-2xl mb-8">
         <div className="w-400 h-300">
-          <img
-            src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png"
-            alt="Descripción de la imagen"
-          />
+          <img src={url} alt="phone" />
         </div>
         <div className="w-full max-w-400 h-auto max-h-300  bg-white shadow-xl">
           <div className="p-4 border-b">
@@ -27,27 +25,27 @@ function DescriptionPhone() {
           <div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Marque</p>
-              <p>Wiko</p>
+              <p>{brand}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Modèle</p>
-              <p>VIEW 4 (v830)</p>
+              <p>{model}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">RAM</p>
-              <p>2GO</p>
+              <p>{ram}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Ecran</p>
-              <p>4P</p>
+              <p>{screen}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Stockage</p>
-              <p>16GO</p>
+              <p>{storage}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Indice Antutu</p>
-              <p>120000</p>
+              <p>{indice}</p>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
               <p className="text-gray-600">Attachments</p>
@@ -95,5 +93,15 @@ function DescriptionPhone() {
     </>
   );
 }
+
+DescriptionPhone.propTypes = {
+  brand: PropTypes.string.isRequired,
+  ram: PropTypes.string.isRequired,
+  storage: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  screen: PropTypes.string.isRequired,
+  indice: PropTypes.string.isRequired,
+};
 
 export default DescriptionPhone;
