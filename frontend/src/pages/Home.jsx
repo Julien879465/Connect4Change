@@ -5,7 +5,7 @@ import deco from "../assets/Images/deco.png";
 import tel1 from "../assets/Images/tel1.png";
 import tel2 from "../assets/Images/tel2.png";
 import tel3 from "../assets/Images/tel3.png";
-import SideBar from "../components/SideBar";
+
 import CurrentDate from "../components/CurrentDate";
 
 function Home() {
@@ -22,8 +22,7 @@ function Home() {
 
   return (
     <>
-      <SideBar />
-      <div className="absolute ml-72">
+      <div className="flex flex-col ">
         <div className="flex flex-row ml-20 mb-20 mt-6">
           <p className="text-2xl font-medium ">Accueil</p>
           <img src={deco} alt="logo" className="w-6" />
