@@ -5,6 +5,7 @@ import SideBar from "./components/SideBar";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
+import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Registration from "./pages/Registration";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Phonepage" element={<PhonePage />} />
         <Route path="/onephone" element={<OnePhone />} />
         <Route path="/telechargements" element={<Telechargements />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <ToastContainer />
     </div>

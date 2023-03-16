@@ -5,7 +5,7 @@ function PhoneCards() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-8">
       <div className="relative mx-auto w-full">
         <a
-          href="/"
+          href="/OnePhone"
           className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
         >
           <div className="shadow p-4 rounded-lg bg-white">
@@ -226,7 +226,7 @@ function PhoneCards() {
                   </p>
                 </div>
               </div>
-              <span className="absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 text-xs rounded text-white bg-grey2 opacity-75">
+              <span className="absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-grey2 text-sm font-medium text-white select-none">
                 Rupture de stock
               </span>
             </div>
