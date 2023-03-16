@@ -25,9 +25,8 @@ function FormButton() {
       ram.map((r) => {
         if (r.id === id) {
           return { ...r, seen: nextSeen };
-        } else {
-          return r;
         }
+        return r;
       })
     );
   }
@@ -37,9 +36,8 @@ function FormButton() {
       stockage.map((s) => {
         if (s.id === id) {
           return { ...s, seen: nextSeen };
-        } else {
-          return s;
         }
+        return s;
       })
     );
   }

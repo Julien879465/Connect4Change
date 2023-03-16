@@ -3,7 +3,6 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
-//PAGES
 import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Registration from "./pages/Registration";
@@ -13,7 +12,6 @@ import OnePhone from "./pages/OnePhone";
 import Telechargements from "./pages/Telechargements";
 import FAQ from "./pages/FAQ";
 
-//COMPONENTS
 import SideBar from "./components/SideBar";
 
 function App() {

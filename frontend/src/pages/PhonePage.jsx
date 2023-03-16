@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import deco from "../assets/Images/Deco.png";
