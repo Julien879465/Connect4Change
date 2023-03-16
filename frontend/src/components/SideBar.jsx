@@ -9,8 +9,8 @@ import help from "../assets/Icons/help-circle.svg";
 
 function SideBar() {
   return (
-    <div className="flex items-center h-screen">
-      <div className="flex ml-10 flex-col h-[95vh] w-[18%] min-w-[200px] bg-white rounded-xl justify-between drop-shadow-4xl">
+    <div className="flex items-center h-full py-10">
+      <div className="flex ml-10 flex-col h-full w-full min-w-[200px] bg-white rounded-xl justify-between drop-shadow-4xl">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <img className="w-[60%] m-6 mb-20" src={logo} alt="logo" />
@@ -27,7 +27,7 @@ function SideBar() {
                   <h1 className="text-2xl m-2">Téléphones</h1>
                 </div>
               </NavLink>
-              <NavLink to="/téléchargements">
+              <NavLink to="/telechargements">
                 <div className="flex flex-row ml-8">
                   <img className="w-7" src={file} alt="file-logo" />
                   <h1 className="text-2xl m-2">Téléchargements</h1>

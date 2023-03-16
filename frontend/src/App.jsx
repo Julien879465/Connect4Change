@@ -4,7 +4,7 @@ import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="bg-grey grow">
+    <div className="bg-background grow flex flex-row w-full">
       <SideBar />
       <Routes>
         <Route path="/telechargements" element={<Telechargements />} />

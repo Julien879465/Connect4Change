@@ -36,7 +36,7 @@ function FormCsv() {
             type="text"
             name="name"
             id="name"
-            className="border-2 border-slate-900 w-full"
+            className="hidden border-2 border-slate-900 w-full"
           />
         </label>
         Ajouter un fichier CSV:

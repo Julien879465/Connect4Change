@@ -20,9 +20,9 @@ function header() {
 
   return (
     <div className="flex flex-col w-full justify-between font-fira">
-      <div className="flex flex-row">
+      <div className="flex flex-row items-end gap-4">
         <h2 className="font-medium text-4xl">Accueil</h2>
-        <img src={deco} alt="petits ronds colorés" />
+        <img src={deco} alt="petits ronds colorés" className="pb-6" />
       </div>
       <p className="font-normal text-grey1">{date}</p>
     </div>
