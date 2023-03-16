@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import PhoneCards from "../components/PhoneCards";
 import expressAPI from "../services/expressAPI";
 import deco from "../assets/Images/Deco.png";
@@ -51,15 +52,16 @@ function PhonePage() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
         {phones.map((phone) => (
-          <PhoneCards
-            key={phone.id}
-            brand={phone.brand}
-            ram={phone.ram}
-            storage={phone.storage}
-            url={phone.url}
-            network={phone.network}
-            model={phone.model}
-          />
+          <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
+            <PhoneCards
+              brand={phone.brand}
+              ram={phone.ram}
+              storage={phone.storage}
+              url={phone.url}
+              network={phone.network}
+              model={phone.model}
+            />
+          </Link>
         ))}
       </div>
     </div>

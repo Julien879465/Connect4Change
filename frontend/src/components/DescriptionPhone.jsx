@@ -7,7 +7,7 @@ function DescriptionPhone({ brand, ram, storage, url, model, screen, indice }) {
     <div>
       <div>
         <a
-          href="/PhonePage"
+          href="/telephones"
           className="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-main bg-white hover:underline"
         >
           <img src={left} alt="" />
@@ -93,12 +93,12 @@ function DescriptionPhone({ brand, ram, storage, url, model, screen, indice }) {
 
 DescriptionPhone.propTypes = {
   brand: PropTypes.string.isRequired,
-  ram: PropTypes.string.isRequired,
-  storage: PropTypes.string.isRequired,
+  ram: PropTypes.number.isRequired,
+  storage: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
-  screen: PropTypes.string.isRequired,
-  indice: PropTypes.string.isRequired,
+  screen: PropTypes.number.isRequired,
+  indice: PropTypes.number.isRequired,
 };
 
 export default DescriptionPhone;
