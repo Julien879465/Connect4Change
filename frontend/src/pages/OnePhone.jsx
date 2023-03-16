@@ -25,12 +25,12 @@ function OnePhone() {
 
   return (
     <div className="m-5">
-      <div className=" font-bold text-2xl font-jost flex items-center gap-4">
+      <div className="mt-5 font-bold text-4xl font-feli flex items-center gap-4">
         <span>Téléphones</span>
         <img
           src={deco}
           alt="Descripción de la imagen"
-          className="w-3 h-4 mb-3"
+          className="w-5 h-6 mb-3"
         />
       </div>
       <div className="pl-2 text-grey2 text-xs mb-8">
