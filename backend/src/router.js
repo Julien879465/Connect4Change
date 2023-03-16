@@ -8,7 +8,10 @@ const phoneControllers = require("./controllers/phoneControllers");
 const totalControllers = require("./controllers/totalControllers");
 const stateControllers = require("./controllers/stateControllers");
 const calcControllers = require("./controllers/calcController");
+const fileControllers = require("./controllers/fileControllers");
 const auth = require("./middlewares/auth");
+
+const fileUpload = require("./middlewares/multer");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -43,5 +46,11 @@ router.post("/etats", stateControllers.add);
 router.delete("/etats/:id", stateControllers.destroy);
 
 router.get("/calc", calcControllers.browse);
+
+router.get("/text", fileControllers.browse);
+router.get("/text/:id", fileControllers.read);
+router.put("/text/:id", fileControllers.edit);
+router.post("/text", fileUpload, fileControllers.add);
+router.delete("/text/:id", fileControllers.destroy);
 
 module.exports = router;

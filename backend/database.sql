@@ -98,6 +98,18 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
+-- -----------------------------------------------------
+-- Table `hackathon`.`file`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `hackathon`.`file` (
+  `idfile` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(155) NULL,
+  `filename` LONGTEXT NOT NULL,
+  PRIMARY KEY (`idfile`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
