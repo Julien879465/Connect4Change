@@ -24,7 +24,7 @@ function Connexion() {
         .then((res) => {
           setUser(res.data.user.email);
           localStorage.setItem("user", JSON.stringify(user));
-          navigate("/Home");
+          navigate("/");
         })
         .catch(() => toastError("Le mot de passe ou l'email est incorrect"));
     } else {
