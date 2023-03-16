@@ -10,6 +10,7 @@ import PhonePage from "./pages/PhonePage";
 import OnePhone from "./pages/OnePhone";
 import Telechargements from "./pages/Telechargements";
 import FAQ from "./pages/FAQ";
+import CurrentPhoneContextProvider from "./contexts/CurrentPhoneContext";
 
 //COMPONENTS
 import SideBar from "./components/SideBar";
@@ -19,20 +20,22 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
   return (
-    <div className="bg-background grow flex flex-row w-full">
-      <SideBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Connexion" element={<Connexion />} />
-        <Route path="/Registration" element={<Registration />} />
-        <Route path="/Logout" element={<Logout />} />
-        <Route path="/Phonepage" element={<PhonePage />} />
-        <Route path="/onephone" element={<OnePhone />} />
-        <Route path="/telechargements" element={<Telechargements />} />
-        <Route path="/faq" element={<FAQ />} />
-      </Routes>
-      <ToastContainer />
-    </div>
+    <CurrentPhoneContextProvider>
+      <div className="bg-background grow flex flex-row w-full">
+        <SideBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Connexion" element={<Connexion />} />
+          <Route path="/Registration" element={<Registration />} />
+          <Route path="/Logout" element={<Logout />} />
+          <Route path="/Phonepage" element={<PhonePage />} />
+          <Route path="/onephone" element={<OnePhone />} />
+          <Route path="/telechargements" element={<Telechargements />} />
+          <Route path="/faq" element={<FAQ />} />
+        </Routes>
+        <ToastContainer />
+      </div>
+    </CurrentPhoneContextProvider>
   );
 }
 

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useCurrentPhoneContext } from "../contexts/CurrentPhoneContext";
 
-function FormButton() {
-  const [ram, setRam] = useState([
+function FormButton({ setRam, setStorage }) {
+  // const { setRam, setStorage } = useCurrentPhoneContext();
+
+  const rambis = [
     { id: 1, seen: false },
     { id: 2, seen: false },
     { id: 3, seen: false },
@@ -10,45 +12,50 @@ function FormButton() {
     { id: 8, seen: false },
     { id: 12, seen: false },
     { id: 16, seen: false },
-  ]);
-  const [stockage, setStockage] = useState([
+  ];
+  function handleToggleRam(id, nextSeen) {
+    setRam(rambis.filter((r) => r.id === id)[0].id);
+    rambis.map((r) => {
+      if (r.id === id) {
+        return { ...r, seen: nextSeen };
+      }
+    });
+  }
+
+  // function handleToggleRam(id, nextSeen) {
+  //   setRam(
+  //   rambis.map((r) => {
+  //     if (r.id === id) {
+  //       return { ...r, seen: nextSeen };
+  //     }
+  //     return [];
+  //   })
+  // );
+  // }
+
+  const storagebis = [
     { id: 64, seen: false },
     { id: 128, seen: false },
     { id: 256, seen: false },
     { id: 512, seen: false },
     { id: 1024, seen: false },
     { id: 2048, seen: false },
-  ]);
-
-  function handleToggleRam(id, nextSeen) {
-    setRam(
-      ram.map((r) => {
-        if (r.id === id) {
-          return { ...r, seen: nextSeen };
-        } else {
-          return r;
-        }
-      })
-    );
-  }
+  ];
 
   function handleToggleStockage(id, nextSeen) {
-    setStockage(
-      stockage.map((s) => {
-        if (s.id === id) {
-          return { ...s, seen: nextSeen };
-        } else {
-          return s;
-        }
-      })
-    );
+    setStorage(storagebis.filter((s) => s.id === id)[0].id);
+    storagebis.map((s) => {
+      if (s.id === id) {
+        return { ...s, seen: nextSeen };
+      }
+    });
   }
 
   return (
     <div className="block">
       <p>RAM</p>
       <div className=" grid gap-2 grid-cols-4">
-        {ram.map((r) => (
+        {rambis.map((r) => (
           <button
             key={r.id}
             type="button"
@@ -65,7 +72,7 @@ function FormButton() {
       <div className="block pt-5 b-10">
         <p>Stockage</p>
         <div className=" grid gap-2 grid-cols-4">
-          {stockage.map((s) => (
+          {storagebis.map((s) => (
             <button
               key={s.id}
               type="button"

@@ -52,6 +52,7 @@ const edit = (req, res) => {
 
 const add = (req, res) => {
   const total = req.body;
+  console.log(total);
 
   // TODO validations (length, format...)
 

@@ -7,8 +7,8 @@ class StateManager extends AbstractManager {
 
   insert(state) {
     return this.database.query(
-      `insert into ${this.table} (idsatate, name, weighting, phone_idphone) values (?, ?, ?, ?)`,
-      [state.idstate, state.name, state.weighting, state.phoneIdphone]
+      `insert into ${this.table} (name, weighting, phone_idphone) values ( ?, ?, ?)`,
+      [state.name, state.weighting, state.phoneIdphone]
     );
   }
 
