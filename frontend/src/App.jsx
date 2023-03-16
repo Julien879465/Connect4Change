@@ -1,17 +1,20 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Telechargements from "./pages/Telechargements";
-import SideBar from "./components/SideBar";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
-import FAQ from "./pages/FAQ";
+//PAGES
 import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Registration from "./pages/Registration";
 import Logout from "./pages/Logout";
-import OnePhone from "./pages/OnePhone";
 import PhonePage from "./pages/PhonePage";
+import OnePhone from "./pages/OnePhone";
+import Telechargements from "./pages/Telechargements";
+import FAQ from "./pages/FAQ";
+
+//COMPONENTS
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
