@@ -58,4 +58,36 @@ const storageVal = (storage) => {
 
   return limits.filter((limit) => storage === limit.storageLimit)[0].val;
 };
-export default { antutuVal, ramVal, storageVal };
+
+const sum = (antutuIndice, ram, storage) => {
+  return antutuVal(antutuIndice) + ramVal(ram) + storageVal(storage);
+};
+
+const totalWeighted = (total, weighting) => {
+  const ponderation = ["-100%", "-50%", "-10%", "-5%", "0%", "5%", "10%"];
+
+  return (
+    (parseInt(
+      ponderation.filter((pond) => weighting === pond),
+      10
+    ) *
+      total) /
+    100
+  );
+};
+
+const category = (weightTotal) => {
+  const limits = [
+    { minTotal: 0, maxTotal: 90, val: "1 - HC", price: "N/A" },
+    { minTotal: 91, maxTotal: 165, val: "2 - C", price: "50" },
+    { minTotal: 166, maxTotal: 255, val: "3 - B", price: "100€" },
+    { minTotal: 256, maxTotal: 375, val: "4 - A", price: "150" },
+    { minTotal: 375, maxTotal: 1000, val: "Premium", price: "200" },
+  ];
+
+  return limits.filter(
+    (limit) => weightTotal >= limit.minTotal && weightTotal <= limit.maxTotal
+  )[0];
+};
+
+export default { antutuVal, ramVal, storageVal, sum, totalWeighted, category };
