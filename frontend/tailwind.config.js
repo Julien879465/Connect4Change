@@ -47,6 +47,7 @@ module.exports = {
       backgroundImage: {},
       boxShadow: {
         image: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        nav: "0px 4px 29px rgba(0, 0, 0, 0.1)",
       },
     },
   },
