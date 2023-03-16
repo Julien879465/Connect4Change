@@ -32,11 +32,9 @@ const models = {};
 const ItemManager = require("./ItemManager");
 const UserManager = require("./UserManager");
 const TotalManager = require("./TotalManager");
-// eslint-disable-next-line import/extensions
 const PhoneManager = require("./PhoneManager");
 const StateManager = require("./StateManager");
-// eslint-disable-next-line import/extensions
-const CalcManager = require("./CalcManager.js");
+const CalcManager = require("./CalcManager");
 
 models.user = new UserManager();
 models.user.setDatabase(pool);
