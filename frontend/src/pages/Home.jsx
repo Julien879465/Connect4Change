@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import GaugeChart from "react-gauge-chart";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -24,7 +25,6 @@ function Home() {
   const [network, setNetwork] = useState("");
   const [antutuIndice, setAntutuIndice] = useState(0);
   const [weighting, setWeighting] = useState("");
-  const [resultat, setResultat] = useState("");
   const [name, setName] = useState("");
   // const [url, setUrl] = useState([]);
 
@@ -122,7 +122,6 @@ function Home() {
       setShowgauge((prev) => !prev);
     }
   }, [idstate]);
-  console.log(showgauge);
 
   const handleSubmitQrCode = (event) => {
     event.preventDefault();
