@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import QRCode from "react-qr-code";
@@ -13,29 +13,18 @@ function Home() {
   const [ponderation, setPonderation] = useState("");
   const [resultat, setResultat] = useState("");
   const [showQrCode, setShowQrCode] = useState(false);
-  const [date, setDate] = useState(new Date());
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowQrCode(true);
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    const timerID = setInterval(() => tick(), 1000);
-
-    return function cleanup() {
-      clearInterval(timerID);
-    };
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  const formattedTime = date
-    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    .replace(":", "h");
 
   return (
     <div className="m-5">
@@ -43,9 +32,7 @@ function Home() {
         <span>Accueil</span>
         <img src={deco} alt="Descripción de la imagen" className="mb-7" />
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {date.toLocaleDateString()} {formattedTime}
-      </div>
+      <p className="ml-3 mb-5 font-normal text-grey1">{date}</p>
 
       <div>
         <h2 className="mb-8 font-fira font-medium text-2xl">

@@ -8,24 +8,12 @@ import SearchBar from "../components/SearchBar";
 function PhonePage() {
   const [search, setSearch] = useState(" ");
   const [phones, setPhones] = useState([]);
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    const timerID = setInterval(() => tick(), 1000);
-
-    return function cleanup() {
-      clearInterval(timerID);
-    };
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  const formattedTime = date
-    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    .replace(":", "h");
 
   useEffect(() => {
     expressAPI.get(`/telephones`).then((res) => {
@@ -37,16 +25,14 @@ function PhonePage() {
     <div className="m-5">
       <div className="mt-5 font-bold text-4xl flex items-center justify-between gap-4">
         <div className="mt-3 ml-2 font-bold text-4xl font-feli flex items-center gap-4">
-          <span>Télépones</span>
+          <span>Téléphones</span>
           <img src={deco} alt="Descripción de la imagen" className="mb-7" />
         </div>
         <div className="flex mr-10">
           <SearchBar search={search} setSearch={setSearch} />
         </div>
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {date.toLocaleDateString()} {formattedTime}
-      </div>
+      <p className="ml-3 mb-5 font-normal text-grey1">{date}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
         {phones
           .filter(
