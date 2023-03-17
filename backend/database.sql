@@ -67,6 +67,13 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`state` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
+<<<<<<< HEAD
+LOCK TABLES `state` WRITE;
+/*!40000 ALTER TABLE `state` DISABLE KEYS */;
+INSERT INTO `state` VALUES (1,'RECONDITIONNE','5%',1),(2,'RECONDITIONNE','5%',2),(3,'RECONDITIONNE','5%',3),(4,'RECONDITIONNE','5%',4),(5,'RECONDITIONNE','5%',5),(6,'RECONDITIONNE','5%',6),(7,'RECONDITIONNE','5%',7),(8,'RECONDITIONNE','5%',8),(9,'RECONDITIONNE','5%',9),(10,'RECONDITIONNE','5%',10);
+/*!40000 ALTER TABLE `state` ENABLE KEYS */;
+UNLOCK TABLES;
+=======
 -- -----------------------------------------------------
 -- Table hackathon.file
 -- -----------------------------------------------------
@@ -77,6 +84,7 @@ CREATE TABLE IF NOT EXISTS hackathon.file (
   PRIMARY KEY (idfile))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+>>>>>>> ed38420a6345c40fac7a21abbc24cc34b8ed139b
 
 
 -- -----------------------------------------------------
@@ -101,6 +109,11 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`total` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
+LOCK TABLES `total` WRITE;
+/*!40000 ALTER TABLE `total` DISABLE KEYS */;
+INSERT INTO `total` VALUES (1,54,66,44,164,172,'3 - B',1),(2,80,72,123,275,289,'4 - A',2),(3,60,66,44,170,179,'3 - B',3),(4,80,80,164,324,340,'4 - A',4),(5,70,72,49,191,201,'3 - B',5),(6,60,72,49,181,190,'3 - B',6),(7,60,72,57,189,198,'3 - B',7),(8,60,66,49,175,184,'3 - B',8),(9,80,80,150,310,326,'4 - A',9),(10,30,66,40,136,143,'2 - C',10);
+/*!40000 ALTER TABLE `total` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- -----------------------------------------------------
 -- Table `hackathon`.`user`
