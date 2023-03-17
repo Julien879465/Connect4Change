@@ -38,6 +38,7 @@ function Home() {
   const [idstate, setIdState] = useState(null);
   const [idtotal, setIdTotal] = useState(null);
 
+  const [categoryN, setCategoryN] = useState(null);
   const [showgauge, setShowgauge] = useState(false);
 
   // const formattedTime = new Date()
@@ -119,6 +120,7 @@ function Home() {
         .catch((error) => {
           console.error(error);
         });
+      setCategoryN(categoryName);
       setShowgauge((prev) => !prev);
     }
   }, [idstate]);
@@ -299,7 +301,7 @@ function Home() {
               showgauge ? "flex text-yellow self-center" : "hidden"
             }`}
           >
-            Catégorie : 4 - A
+            Catégorie : {categoryN}
           </p>
           <button
             className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"

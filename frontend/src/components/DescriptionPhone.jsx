@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import QRCode from "react-qr-code";
 import left from "../assets/Images/chevron-left.svg";
 
 function DescriptionPhone({
@@ -87,6 +88,19 @@ function DescriptionPhone({
                     </a>
                   </div>
                 </div>
+                <QRCode
+                  className="scale-50"
+                  value={JSON.stringify({
+                    brand,
+                    ram,
+                    storage,
+                    model,
+                    screen,
+                    indice,
+                    network,
+                    system,
+                  })}
+                />
               </div>
             </div>
           </div>
