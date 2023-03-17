@@ -1,6 +1,10 @@
-import { useCurrentPhoneContext } from "../contexts/CurrentPhoneContext";
+import PropTypes from "prop-types";
 
 function FormButton({ setRam, setStorage }) {
+  FormButton.propTypes = {
+    setRam: PropTypes.func.isRequired,
+    setStorage: PropTypes.func.isRequired,
+  };
   // const { setRam, setStorage } = useCurrentPhoneContext();
 
   const rambis = [
@@ -19,6 +23,7 @@ function FormButton({ setRam, setStorage }) {
       if (r.id === id) {
         return { ...r, seen: nextSeen };
       }
+      return r;
     });
   }
 
@@ -48,6 +53,7 @@ function FormButton({ setRam, setStorage }) {
       if (s.id === id) {
         return { ...s, seen: nextSeen };
       }
+      return s;
     });
   }
 

@@ -69,14 +69,11 @@ const add = (req, res) => {
     url,
   };
 
-  console.log(phone);
-
   // TODO validations (length, format...)
 
   models.phone
     .insert(phone)
     .then(([result]) => {
-      console.log("test==>", result);
       res.status(201).send({ idphone: result.insertId });
     })
     .catch((err) => {

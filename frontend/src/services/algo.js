@@ -76,6 +76,8 @@ export const totalWeighted = (total, weighting) => {
         total) /
       100
     );
+  } else if (weighting === "0%") {
+    return total;
   } else {
     return (
       ((100 +
