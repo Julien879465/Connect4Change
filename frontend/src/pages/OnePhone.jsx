@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import deco from "../assets/Images/Deco.png";
 import DescriptionPhone from "../components/DescriptionPhone";
+import expressAPI from "../services/expressAPI";
 
 function OnePhone() {
   const [date, setDate] = useState(new Date());
+  const [phones, setPhones] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    expressAPI.get(`/telephones/${id}`).then((res) => {
+      setPhones([res.data]);
+    });
+  }, []);
 
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
@@ -35,7 +46,21 @@ function OnePhone() {
       <div className="pl-2 text-grey2 text-xs mb-8">
         {date.toLocaleDateString()} {formattedTime}
       </div>
-      <DescriptionPhone />
+      <div>
+        {phones.map((phone) => (
+          <DescriptionPhone
+            key={phone.idphone}
+            brand={phone.brand}
+            ram={phone.ram}
+            storage={phone.storage}
+            url={phone.url}
+            network={phone.network}
+            model={phone.model}
+            screen={phone.screen_size}
+            indice={phone.antutu_indice}
+          />
+        ))}
+      </div>
     </div>
   );
 }
