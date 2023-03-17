@@ -7,16 +7,15 @@ class TotalManager extends AbstractManager {
 
   insert(total) {
     return this.database.query(
-      `insert into ${this.table} (idtotal, phone_idphone, ram_value, storage_value, antutu_value, total, total_weighted, category_name) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (phone_idphone, ram_value, storage_value, antutu_value, total, total_weighted, category_name) values ( ?, ?, ?, ?, ?, ?, ?)`,
       [
-        total.idtotal,
         total.phoneIdphone,
         total.ramValue,
         total.storageValue,
         total.antutuValue,
-        total.total,
-        total.totalWeighted,
-        total.caterogyName,
+        total.totalValue,
+        total.totalWeightedValue,
+        total.categoryName,
       ]
     );
   }
@@ -28,8 +27,8 @@ class TotalManager extends AbstractManager {
         total.ramValue,
         total.storageValue,
         total.antutuValue,
-        total.total,
-        total.totalWeighted,
+        total.totalValue,
+        total.totalWeightedValue,
         total.phoneIdphone,
         total.caterogyName,
         total.id,
