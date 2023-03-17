@@ -27,7 +27,7 @@ function Connexion() {
         .then((res) => {
           setUser(res.data.user.email);
           localStorage.setItem("user", JSON.stringify(user));
-          navigate("/");
+          navigate("/Accueil");
         })
         .catch(() => toastError("Le mot de passe ou l'email est incorrect"));
     } else {
@@ -36,7 +36,7 @@ function Connexion() {
   };
 
   return (
-    <>
+    <div className="flex flex-col w-full">
       <Navbar />
       <div className="flex flex-col items-center mt-20">
         <div className="flex flex-row items-center justify-evenly w-full">
@@ -48,7 +48,7 @@ function Connexion() {
             <div className="flex flex-row text-left">
               <p className="text-grey1 text-s pr-4">Je n'ai pas de compte ?</p>
               <Link
-                to="/Registration"
+                to="/"
                 className="text-main-light font-semibold text-sm underline decoration-2 decoration-main-light"
               >
                 M'inscrire
@@ -98,7 +98,7 @@ function Connexion() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

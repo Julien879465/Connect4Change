@@ -22,9 +22,9 @@ function App() {
     <div className="bg-background grow flex flex-row w-full">
       <SideBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Registration />} />
         <Route path="/Connexion" element={<Connexion />} />
-        <Route path="/Registration" element={<Registration />} />
+        <Route path="/Accueil" element={<Home />} />
         <Route path="/Logout" element={<Logout />} />
         <Route path="/telephones" element={<PhonePage />} />
         <Route path="/telephones/:id" element={<OnePhone />} />
