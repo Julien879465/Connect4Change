@@ -67,11 +67,24 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`state` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
+<<<<<<< HEAD
 LOCK TABLES `state` WRITE;
 /*!40000 ALTER TABLE `state` DISABLE KEYS */;
 INSERT INTO `state` VALUES (1,'RECONDITIONNE','5%',1),(2,'RECONDITIONNE','5%',2),(3,'RECONDITIONNE','5%',3),(4,'RECONDITIONNE','5%',4),(5,'RECONDITIONNE','5%',5),(6,'RECONDITIONNE','5%',6),(7,'RECONDITIONNE','5%',7),(8,'RECONDITIONNE','5%',8),(9,'RECONDITIONNE','5%',9),(10,'RECONDITIONNE','5%',10);
 /*!40000 ALTER TABLE `state` ENABLE KEYS */;
 UNLOCK TABLES;
+=======
+-- -----------------------------------------------------
+-- Table hackathon.file
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS hackathon.file (
+  idfile INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(155) NULL,
+  filename LONGTEXT NOT NULL,
+  PRIMARY KEY (idfile))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+>>>>>>> ed38420a6345c40fac7a21abbc24cc34b8ed139b
 
 
 -- -----------------------------------------------------
@@ -116,6 +129,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
+
 -- -----------------------------------------------------
 -- Table `hackathon`.`file`
 -- -----------------------------------------------------
@@ -126,6 +140,10 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`file` (
   PRIMARY KEY (`idfile`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+
+ALTER TABLE `hackathon`.`file` 
+ADD COLUMN `data` VARCHAR(255) NOT NULL AFTER `filename`;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
