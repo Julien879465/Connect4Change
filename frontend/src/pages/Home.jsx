@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import QRCode from "react-qr-code";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import QRCode from "react-qr-code";
 import FormButton from "../components/FormButton";
 import deco from "../assets/Images/Deco.png";
 import PhoneResult from "../components/PhoneResult";
@@ -38,16 +39,21 @@ function Home() {
 
   return (
     <div className="m-5">
-      <div className="ml-2 font-bold text-3xl font-jost flex items-center gap-4">
+      <div className="mt-6 ml-2 font-bold text-4xl font-feli flex items-center gap-4">
         <span>Accueil</span>
-        <img src={deco} alt="Descripción de la imagen" />
+        <img src={deco} alt="Descripción de la imagen" className="mb-7" />
       </div>
       <div className="pl-2 text-grey2 text-xs mb-8">
         {date.toLocaleDateString()} {formattedTime}
       </div>
 
       <div>
-        <h1 className="mt-10 mb-10">Derniers téléphones ajoutés</h1>
+        <h2 className="mb-8 font-fira font-medium text-2xl">
+          <span className="underline decoration-main-light decoration-4 underline-offset-8">
+            Derniers
+          </span>{" "}
+          téléphones ajoutés
+        </h2>
         <PhoneResult />
       </div>
       <div className="flex flex-col w-full pl-8 gap-4">

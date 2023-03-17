@@ -8,7 +8,7 @@ function DescriptionPhone({ brand, ram, storage, url, model, screen, indice }) {
       <div>
         <a
           href="/telephones"
-          className="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-main bg-white hover:underline"
+          className="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-main hover:underline"
         >
           <img src={left} alt="" />
           Previous
