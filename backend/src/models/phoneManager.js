@@ -5,6 +5,12 @@ class PhoneManager extends AbstractManager {
     super({ table: "phone" });
   }
 
+  findAllPhones() {
+    return this.database.query(
+      `select ${this.table}.*, total.* from  ${this.table} JOIN total ON phone.idphone = total.phone_idphone `
+    );
+  }
+
   insert(phone) {
     return this.database.query(
       `insert into ${this.table} (brand, model, screen_size, network, android_system, antutu_indice, ram, storage, url) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Papa from "papaparse";
 
 import csvFile from "../assets/csv-file-format-extension.svg";

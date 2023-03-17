@@ -1,7 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PhoneCards({ brand, ram, storage, url, network, model }) {
+function PhoneCards({
+  brand,
+  ram,
+  storage,
+  url,
+  network,
+  model,
+  screen,
+  antutu,
+  category,
+}) {
+  const categories = [
+    { category: "1 - HC", color: "text-lime-500" },
+    { category: "2 - C", color: "text-blue-500" },
+    { category: "3 - B", color: "text-yellow-500" },
+    { category: "4 - A", color: "text-orange-500" },
+    { category: "5 - PREMIUM", color: "text-red-500" },
+  ];
+  const handleColor = () => {
+    const color = categories.find((elem) => elem.category === category);
+    return color ? color.color : "text-black";
+  };
   return (
     <div className="shadow p-4 rounded-lg bg-white">
       <div className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
@@ -17,7 +38,9 @@ function PhoneCards({ brand, ram, storage, url, network, model }) {
                 {network}
               </p>
 
-              <p className="flex items-center font-medium text-gray-800">GPS</p>
+              <p className="flex items-center font-medium text-gray-800">
+                {screen}"
+              </p>
 
               <p className="flex items-center font-medium text-gray-800">LCD</p>
             </div>
@@ -36,10 +59,10 @@ function PhoneCards({ brand, ram, storage, url, network, model }) {
             {brand} {model}
           </h2>
           <p
-            className="mt-2 text-sm text-cyan-500 line-clamp-1"
+            className={`mt-2 text-sm text-cyan-500 line-clamp-1 ${handleColor()}`}
             title="New York, NY 10004, United States"
           >
-            INDICE DE RÉPARABILITÉ SMARTPHONE
+            Catégorie {category}
           </p>
         </div>
 
@@ -49,6 +72,9 @@ function PhoneCards({ brand, ram, storage, url, network, model }) {
           </p>
           <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
             <span className="block mt-2 xl:mt-0">Stockage: {storage} Go</span>
+          </p>
+          <p className="block text-gray-800">
+            <span className="block mt-2 xl:mt-0">Score antutu: {antutu}</span>
           </p>
         </div>
 
@@ -81,6 +107,9 @@ PhoneCards.propTypes = {
   url: PropTypes.string.isRequired,
   network: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
+  screen: PropTypes.number.isRequired,
+  antutu: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default PhoneCards;
