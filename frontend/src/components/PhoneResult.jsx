@@ -29,7 +29,7 @@ function PhoneResult() {
                   </p>
 
                   <p className="flex items-center font-medium text-gray-800">
-                    TFT LCD
+                    LCD
                   </p>
                 </div>
               </div>
@@ -44,7 +44,7 @@ function PhoneResult() {
                 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
                 title="New York"
               >
-                Smartphone Wiko VIEW 4 (v830)
+                Smartphone Wiko VIEW 4
               </h2>
               <p
                 className="mt-2 text-sm text-cyan-500 line-clamp-1"
@@ -58,22 +58,9 @@ function PhoneResult() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light w-full justify-between focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="bg-main hover:bg-main-light text-white py-2 px-4 rounded-full "
                 >
                   Voir plus
-                  <svg
-                    aria-hidden="true"
-                    className="w-5 h-5 ml-2 -mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                 </button>
               </div>
             </div>
@@ -90,7 +77,7 @@ function PhoneResult() {
             <div className="flex justify-center relative rounded-lg overflow-hidden h-90">
               <div className="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                 <img
-                  src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png"
+                  src="https://www.indicereparabilite.fr/wp-content/uploads/2022/01/8-a-10-5.png"
                   alt="Descripción de la imagen"
                 />
                 <div className="absolute inset-0 bg-black opacity-10" />
@@ -99,7 +86,7 @@ function PhoneResult() {
               <div className="absolute flex justify-center bottom-0 mb-3">
                 <div className="flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow">
                   <p className="flex items-center font-medium text-gray-800">
-                    4G
+                    5G
                   </p>
 
                   <p className="flex items-center font-medium text-gray-800">
@@ -107,7 +94,7 @@ function PhoneResult() {
                   </p>
 
                   <p className="flex items-center font-medium text-gray-800">
-                    TFT LCD
+                    LCD
                   </p>
                 </div>
               </div>
@@ -122,7 +109,7 @@ function PhoneResult() {
                 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
                 title="New York"
               >
-                Smartphone Wiko VIEW 4 (v830)
+                Smartphone Athesi RT55
               </h2>
               <p
                 className="mt-2 text-sm text-yellow line-clamp-1"
@@ -136,22 +123,9 @@ function PhoneResult() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light w-full justify-between  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="bg-main hover:bg-main-light text-white py-2 px-4 rounded-full "
                 >
                   Voir plus
-                  <svg
-                    aria-hidden="true"
-                    className="w-5 h-5 ml-2 -mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                 </button>
               </div>
             </div>
@@ -167,7 +141,7 @@ function PhoneResult() {
             <div className="flex justify-center relative rounded-lg overflow-hidden h-90">
               <div className="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                 <img
-                  src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png"
+                  src="https://www.indicereparabilite.fr/wp-content/uploads/2022/01/8-a-10-2.png"
                   alt="Descripción de la imagen"
                 />
                 <div className="absolute inset-0 bg-black opacity-10" />
@@ -184,7 +158,7 @@ function PhoneResult() {
                   </p>
 
                   <p className="flex items-center font-medium text-gray-800">
-                    TFT LCD
+                    LCD
                   </p>
                 </div>
               </div>
@@ -198,7 +172,7 @@ function PhoneResult() {
                 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
                 title="New York"
               >
-                Smartphone Wiko VIEW 4 (v830)
+                Smartphone Spectralink
               </h2>
               <p
                 className="mt-2 text-sm text-red line-clamp-1"
@@ -212,22 +186,9 @@ function PhoneResult() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light w-full justify-between focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="bg-main hover:bg-main-light text-white py-2 px-4 rounded-full "
                 >
                   Voir plus
-                  <svg
-                    aria-hidden="true"
-                    className="w-5 h-5 ml-2 -mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                 </button>
               </div>
             </div>
@@ -243,7 +204,7 @@ function PhoneResult() {
             <div className="flex justify-center relative rounded-lg overflow-hidden h-90">
               <div className="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                 <img
-                  src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png"
+                  src="https://www.indicereparabilite.fr/wp-content/uploads/2021/01/6-a-79.png"
                   alt="Descripción de la imagen"
                 />
                 <div className="absolute inset-0 bg-black opacity-10" />
@@ -260,7 +221,7 @@ function PhoneResult() {
                   </p>
 
                   <p className="flex items-center font-medium text-gray-800">
-                    TFT LCD
+                    LCD
                   </p>
                 </div>
               </div>
@@ -275,7 +236,7 @@ function PhoneResult() {
                 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
                 title="New York"
               >
-                Smartphone Wiko VIEW 4 (v830)
+                Smartphone OnePlus 8T
               </h2>
               <p
                 className="mt-2 text-sm text-cyan-500 line-clamp-1"
@@ -289,22 +250,9 @@ function PhoneResult() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="text-white bg-main hover:bg-main-light justify-between  w-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center "
+                  className="bg-main hover:bg-main-light text-white py-2 px-4 rounded-full "
                 >
                   Voir plus
-                  <svg
-                    aria-hidden="true"
-                    className="w-5 h-5 ml-2 -mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                 </button>
               </div>
             </div>

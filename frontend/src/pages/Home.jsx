@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import GaugeChart from "react-gauge-chart";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+
 import FormButton from "../components/FormButton";
 import deco from "../assets/Images/Deco.png";
 import PhoneResult from "../components/PhoneResult";
@@ -144,7 +146,12 @@ function Home() {
       <div className="pl-2 text-grey2 text-xs mb-8">{date}</div>
 
       <div>
-        <h1 className="mt-10 mb-10">Derniers téléphones ajoutés</h1>
+        <h2 className="mb-8 font-fira font-medium text-2xl">
+          <span className="underline decoration-main-light decoration-4 underline-offset-8">
+            Derniers
+          </span>{" "}
+          téléphones ajoutés
+        </h2>
         <PhoneResult />
       </div>
       <div className="flex flex-col w-full pl-8 gap-4 ">

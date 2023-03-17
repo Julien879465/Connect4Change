@@ -38,6 +38,13 @@ class PhoneManager extends AbstractManager {
       ]
     );
   }
+
+  findPhone(id) {
+    return this.database.query(
+      `select * from  ${this.table} where idphone = ?`,
+      [id]
+    );
+  }
 }
 
 module.exports = PhoneManager;

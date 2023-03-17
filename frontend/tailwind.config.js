@@ -44,7 +44,7 @@ module.exports = {
           "4xl": "2rem",
         },
       },
-      backgroundImage: {},
+      backgroundImage: { searchBarIcon: "url('./assets/icons/search.svg')" },
       boxShadow: {
         image: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         nav: "0px 4px 29px rgba(0, 0, 0, 0.1)",

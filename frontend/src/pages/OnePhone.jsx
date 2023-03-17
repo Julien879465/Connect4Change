@@ -1,26 +1,26 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import deco from "../assets/Images/Deco.png";
 import DescriptionPhone from "../components/DescriptionPhone";
+import expressAPI from "../services/expressAPI";
 
 function OnePhone() {
-  const [date, setDate] = useState(new Date());
+  const [phones, setPhones] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    const timerID = setInterval(() => tick(), 1000);
+    expressAPI.get(`/telephones/${id}`).then((res) => {
+      setPhones([res.data]);
+    });
+  }, []);
 
-    return function cleanup() {
-      clearInterval(timerID);
-    };
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  const formattedTime = date
-    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    .replace(":", "h");
 
   return (
     <div className="m-5">
@@ -32,10 +32,22 @@ function OnePhone() {
           className="w-5 h-6 mb-3"
         />
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {date.toLocaleDateString()} {formattedTime}
+      <p className="ml-3 mb-5 font-normal text-grey1">{date}</p>
+      <div>
+        {phones.map((phone) => (
+          <DescriptionPhone
+            key={phone.idphone}
+            brand={phone.brand}
+            ram={phone.ram}
+            storage={phone.storage}
+            url={phone.url}
+            network={phone.network}
+            model={phone.model}
+            screen={phone.screen_size}
+            indice={phone.antutu_indice}
+          />
+        ))}
       </div>
-      <DescriptionPhone />
     </div>
   );
 }
