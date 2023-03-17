@@ -11,6 +11,7 @@ import OnePhone from "./pages/OnePhone";
 import Telechargements from "./pages/Telechargements";
 import FAQ from "./pages/FAQ";
 import CurrentPhoneContextProvider from "./contexts/CurrentPhoneContext";
+import Test from "./pages/Test";
 
 //COMPONENTS
 import SideBar from "./components/SideBar";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/onephone" element={<OnePhone />} />
           <Route path="/telechargements" element={<Telechargements />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
         <ToastContainer />
       </div>

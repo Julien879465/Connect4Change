@@ -83,6 +83,8 @@ function Home() {
         console.log(error);
       });
 
+    console.log(idphone);
+
     const antutuValue = antutuVal(antutuIndice);
     const ramValue = ramVal(ram).val;
     const storageValue = storageVal(storage).val;
@@ -99,9 +101,9 @@ function Home() {
 
     const phoneIdphone = idphone;
     console.log(categoryName);
-    console.log(idphone);
+    console.log(phoneIdphone);
     await expressAPI
-      .post("/etats", { name, weighting, phoneIdphone: idphone })
+      .post("/etats", { name, weighting, phoneIdphone })
       .then((res) => {
         console.log(res.data);
       })
@@ -129,10 +131,11 @@ function Home() {
 
   const handleSubmitQrCode = (event) => {
     event.preventDefault();
-    const { id } = useParams();
-    expressAPI.get(`/calcs/${id}`).then((res) => {
-      console.log(res.data);
-      setQrData(res.data);
+    console.log(idphone);
+
+    expressAPI.get(`/calcs/`).then((res) => {
+      console.log(res.data[res.data?.length - 1]);
+      setQrData(res.data[res.data?.length - 1]);
     });
     setShowQrCode(true);
   };
@@ -292,7 +295,7 @@ function Home() {
             <div className="fixed top-0 left-0 h-full w-full flex items-center justify-center">
               <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50"></div>
               <div className="bg-white rounded-lg z-10">
-                <QRCode value={qrData} />
+                <QRCode value={JSON.stringify(qrData)} />
                 <button
                   className="text-red-500 hover:text-red-700 absolute top-0 right-0 p-2"
                   onClick={() => setShowQrCode(false)}
