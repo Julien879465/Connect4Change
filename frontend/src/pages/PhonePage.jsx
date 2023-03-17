@@ -6,6 +6,7 @@ import deco from "../assets/Images/Deco.png";
 import SearchBar from "../components/SearchBar";
 
 function PhonePage() {
+  const [search, setSearch] = useState(" ");
   const [phones, setPhones] = useState([]);
   const [date, setDate] = useState(new Date());
 
@@ -44,25 +45,45 @@ function PhonePage() {
           />
         </div>
         <div className="flex mr-10">
-          <SearchBar />
+          <SearchBar search={search} setSearch={setSearch} />
         </div>
       </div>
       <div className="pl-2 text-grey2 text-xs mb-8">
         {date.toLocaleDateString()} {formattedTime}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
-        {phones.map((phone) => (
-          <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
-            <PhoneCards
-              brand={phone.brand}
-              ram={phone.ram}
-              storage={phone.storage}
-              url={phone.url}
-              network={phone.network}
-              model={phone.model}
+        {phones
+          .filter(
+            (elem) =>
+              elem.brand.toLowerCase().includes(search.toLowerCase()) ||
+              elem.model.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((phone) => (
+            <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
+              <PhoneCards
+                brand={phone.brand}
+                ram={phone.ram}
+                storage={phone.storage}
+                url={phone.url}
+                network={phone.network}
+                model={phone.model}
+              />
+            </Link>
+          ))}
+        {phones.filter(
+          (elem) =>
+            elem.brand.toLowerCase().includes(search.toLowerCase()) ||
+            elem.model.toLowerCase().includes(search.toLowerCase())
+        ).length === 0 && (
+          <div className="flex flex-row w-[200%]">
+            <img
+              className=""
+              src="https://img.freepik.com/vecteurs-libre/funny-error-404-background-design_1167-219.jpg?w=2000"
+              alt="404"
             />
-          </Link>
-        ))}
+            <p>No phone found</p>
+          </div>
+        )}
       </div>
     </div>
   );
