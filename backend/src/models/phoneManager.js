@@ -13,12 +13,13 @@ class PhoneManager extends AbstractManager {
 
   insert(phone) {
     return this.database.query(
-      `insert into ${this.table} (brand, model, screen_size, network, antutu_indice, ram, storage, url) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (brand, model, screen_size, network, android_system, antutu_indice, ram, storage, url) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         phone.brand,
         phone.model,
         phone.screenSize,
         phone.network,
+        phone.androidSystem,
         phone.antutuIndice,
         phone.ram,
         phone.storage,

@@ -52,13 +52,12 @@ const edit = (req, res) => {
 
 const add = (req, res) => {
   const total = req.body;
-
   // TODO validations (length, format...)
 
   models.total
     .insert(total)
     .then(([result]) => {
-      res.location(`/totals/${result.insertId}`).sendStatus(201);
+      res.status(201).send({ idtotal: result.insertId });
     })
     .catch((err) => {
       console.error(err);

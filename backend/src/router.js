@@ -47,6 +47,9 @@ router.post("/etats", stateControllers.add);
 router.delete("/etats/:id", stateControllers.destroy);
 
 router.get("/calcs", calcControllers.browse);
+router.get("/calcs/:id", calcControllers.read);
+
+router.post("/calcs", calcControllers.add);
 
 router.get("/text", fileControllers.browse);
 router.get("/text/:id", fileControllers.read);

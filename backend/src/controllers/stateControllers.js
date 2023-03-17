@@ -58,7 +58,7 @@ const add = (req, res) => {
   models.state
     .insert(state)
     .then(([result]) => {
-      res.location(`/states/${result.insertId}`).sendStatus(201);
+      res.status(201).send({ idstate: result.insertId });
     })
     .catch((err) => {
       console.error(err);
