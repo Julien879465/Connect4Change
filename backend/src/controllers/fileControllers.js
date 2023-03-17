@@ -54,7 +54,11 @@ const add = (req, res) => {
   // TODO validations (length, format...)
 
   models.file
-    .insert({ name: req.body.name, filename: req.file.filename })
+    .insert({
+      name: req.body.name,
+      filename: req.file.filename,
+      data: JSON.stringify(req.body.data),
+    })
     .then(([result]) => {
       res.location(`/files/${result.insertId}`).sendStatus(201);
     })

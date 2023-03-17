@@ -67,6 +67,17 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`state` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
+-- -----------------------------------------------------
+-- Table hackathon.file
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS hackathon.file (
+  idfile INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(155) NULL,
+  filename LONGTEXT NOT NULL,
+  PRIMARY KEY (idfile))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
 
 -- -----------------------------------------------------
 -- Table `hackathon`.`total`
@@ -105,6 +116,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
+
 -- -----------------------------------------------------
 -- Table `hackathon`.`file`
 -- -----------------------------------------------------
@@ -115,6 +127,10 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`file` (
   PRIMARY KEY (`idfile`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+
+ALTER TABLE `hackathon`.`file` 
+ADD COLUMN `data` VARCHAR(255) NOT NULL AFTER `filename`;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
