@@ -131,14 +131,14 @@ function Home() {
             <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50" />
             <div className="bg-white rounded-lg z-10">
               <QRCode value="salut" />
-              <button
-                type="button"
-                className="text-red-500 hover:text-red-700 absolute top-0 right-0 p-2"
-                onClick={() => setShowQrCode(false)}
-              >
-                Fermer
-              </button>
             </div>
+            <button
+              type="button"
+              className="text-red-500 hover:text-red-700 absolute top-0 right-0 p-2"
+              onClick={() => setShowQrCode(false)}
+            >
+              Fermer
+            </button>
           </div>
         )}
       </div>

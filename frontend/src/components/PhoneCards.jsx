@@ -4,10 +4,7 @@ import PropTypes from "prop-types";
 function PhoneCards({ brand, ram, storage, url, network, model }) {
   return (
     <div className="shadow p-4 rounded-lg bg-white">
-      <a
-        href="/OnePhone"
-        className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
-      >
+      <div className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
         <div className="flex justify-center relative rounded-lg overflow-hidden h-90">
           <div className="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
             <img src={url} alt="Descripción de la imagen" />
@@ -48,10 +45,10 @@ function PhoneCards({ brand, ram, storage, url, network, model }) {
 
         <div className="mt-8">
           <p className="block text-gray-800">
-            <span className="block mt-2 xl:mt-0">RAM: {ram}</span>
+            <span className="block mt-2 xl:mt-0">RAM: {ram} Go</span>
           </p>
           <p className="inline-flex flex-col xl:flex-row xl:items-center text-gray-800">
-            <span className="block mt-2 xl:mt-0">Stockage: {storage}</span>
+            <span className="block mt-2 xl:mt-0">Stockage: {storage} Go</span>
           </p>
         </div>
 
@@ -72,15 +69,15 @@ function PhoneCards({ brand, ram, storage, url, network, model }) {
             </p>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }
 
 PhoneCards.propTypes = {
   brand: PropTypes.string.isRequired,
-  ram: PropTypes.string.isRequired,
-  storage: PropTypes.string.isRequired,
+  ram: PropTypes.number.isRequired,
+  storage: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
   network: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,

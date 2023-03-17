@@ -26,8 +26,8 @@ function App() {
         <Route path="/Connexion" element={<Connexion />} />
         <Route path="/Registration" element={<Registration />} />
         <Route path="/Logout" element={<Logout />} />
-        <Route path="/Phonepage" element={<PhonePage />} />
-        <Route path="/onephone" element={<OnePhone />} />
+        <Route path="/telephones" element={<PhonePage />} />
+        <Route path="/telephones/:id" element={<OnePhone />} />
         <Route path="/telechargements" element={<Telechargements />} />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
