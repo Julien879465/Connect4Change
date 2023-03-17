@@ -35,14 +35,10 @@ function PhonePage() {
 
   return (
     <div className="m-5">
-      <div className=" font-bold text-2xl flex items-center justify-between gap-4">
-        <div className="flex">
-          <span>Téléphones</span>
-          <img
-            src={deco}
-            alt="Descripción de la imagen"
-            className="w-3 h-4 mb-3"
-          />
+      <div className="mt-5 font-bold text-4xl flex items-center justify-between gap-4">
+        <div className="mt-3 ml-2 font-bold text-4xl font-feli flex items-center gap-4">
+          <span>Télépones</span>
+          <img src={deco} alt="Descripción de la imagen" className="mb-7" />
         </div>
         <div className="flex mr-10">
           <SearchBar search={search} setSearch={setSearch} />
