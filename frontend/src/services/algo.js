@@ -69,12 +69,13 @@ export const totalWeighted = (total, weighting) => {
 
   if (ponderationPositive.includes(weighting)) {
     return (
+      total +
       (parseInt(
         ponderationPositive.filter((pond) => weighting === pond),
         10
       ) *
         total) /
-      100
+        100
     );
   } else if (weighting === "0%") {
     return total;
