@@ -44,7 +44,7 @@ function PhoneResult() {
                 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
                 title="New York"
               >
-                Smartphone Wiko VIEW 4 (v830)
+                Smartphone Wiko VIEW 4
               </h2>
               <p
                 className="mt-2 text-sm text-cyan-500 line-clamp-1"

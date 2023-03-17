@@ -6,7 +6,6 @@ import DescriptionPhone from "../components/DescriptionPhone";
 import expressAPI from "../services/expressAPI";
 
 function OnePhone() {
-  const [date, setDate] = useState(new Date());
   const [phones, setPhones] = useState([]);
   const { id } = useParams();
 
@@ -16,22 +15,12 @@ function OnePhone() {
     });
   }, []);
 
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    const timerID = setInterval(() => tick(), 1000);
-
-    return function cleanup() {
-      clearInterval(timerID);
-    };
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  const formattedTime = date
-    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    .replace(":", "h");
 
   return (
     <div className="m-5">
@@ -43,9 +32,7 @@ function OnePhone() {
           className="w-5 h-6 mb-3"
         />
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {date.toLocaleDateString()} {formattedTime}
-      </div>
+      <p className="ml-3 mb-5 font-normal text-grey1">{date}</p>
       <div>
         {phones.map((phone) => (
           <DescriptionPhone
