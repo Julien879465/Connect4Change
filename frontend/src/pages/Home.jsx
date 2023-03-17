@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
+import GaugeChart from "react-gauge-chart";
 
 import FormButton from "../components/FormButton";
 import deco from "../assets/Images/Deco.png";
@@ -34,6 +35,8 @@ function Home() {
   const [idphone, setIdphone] = useState(null);
   const [idstate, setIdState] = useState(null);
   const [idtotal, setIdTotal] = useState(null);
+
+  const [showgauge, setShowgauge] = useState(false);
 
   // const formattedTime = new Date()
   //   .toLocaleTimeString([], {
@@ -78,7 +81,7 @@ function Home() {
     console.warn(phoneIdphone);
     if (idphone !== null) {
       expressAPI
-        .post("/etats", { name, weighting, phoneIdphone })
+        .post("/etats", { name, weighting, phoneIdphone: idphone })
         .then((res) => {
           setIdState(res.data.idstate);
           console.warn(res.data.idstate);
@@ -114,13 +117,16 @@ function Home() {
         .catch((error) => {
           console.error(error);
         });
+      setShowgauge((prev) => !prev);
     }
   }, [idstate]);
+  console.log(showgauge);
 
   const handleSubmitQrCode = (event) => {
     event.preventDefault();
 
     console.warn(idtotal);
+    setShowgauge(false);
 
     expressAPI.get(`/calcs/`).then((res) => {
       setQrData(res.data.slice(-1));
@@ -141,7 +147,7 @@ function Home() {
         <h1 className="mt-10 mb-10">Derniers téléphones ajoutés</h1>
         <PhoneResult />
       </div>
-      <div className="flex flex-col w-full pl-8 gap-4">
+      <div className="flex flex-col w-full pl-8 gap-4 ">
         <h1 className="text-xl ">Ajouter un téléphone</h1>
         <form className="flex flex-row justify-between ">
           <div className=" flex flex-col justify-between">
@@ -277,15 +283,26 @@ function Home() {
             >
               VALIDER
             </button>
-            <button
-              className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"
-              type="submit"
-              onClick={handleSubmitQrCode}
-            >
-              Afficher le QR code
-            </button>
           </div>
         </form>
+        <div className="w-1/3 flex flex-col self-center">
+          <GaugeChart
+            className={`${showgauge ? "hidden" : "flex"}`}
+            id="gauge-chart1"
+            animate={false}
+            nrOfLevels={5}
+            colors={["#00ACB0", "#54A05C", "#FECC38", "#FFAB1D", "#FF3838"]}
+            percent={0.75}
+          />
+          <p className="text-yellow self-center">Catégorie : 4 - A</p>
+          <button
+            className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"
+            type="submit"
+            onClick={handleSubmitQrCode}
+          >
+            Afficher le QR code
+          </button>
+        </div>
         {showQrCode && (
           <div className="fixed top-0 left-0 h-full w-full flex items-center justify-center">
             <div className="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-50" />
