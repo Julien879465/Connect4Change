@@ -35,12 +35,19 @@ function Home() {
   const [idstate, setIdState] = useState(null);
   const [idtotal, setIdTotal] = useState(null);
 
-  const formattedTime = new Date()
-    .toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })
-    .replace(":", "h");
+  // const formattedTime = new Date()
+  //   .toLocaleTimeString([], {
+  //     hour: "2-digit",
+  //     minute: "2-digit",
+  //   })
+  //   .replace(":", "h");
+
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
   const url = "";
   const handleSubmit = async (event) => {
@@ -128,9 +135,7 @@ function Home() {
         <span>Accueil</span>
         <img src={deco} alt="Descripción de la imagen" />
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {formattedTime.toLocaleDateString()} {formattedTime}
-      </div>
+      <div className="pl-2 text-grey2 text-xs mb-8">{date}</div>
 
       <div>
         <h1 className="mt-10 mb-10">Derniers téléphones ajoutés</h1>
