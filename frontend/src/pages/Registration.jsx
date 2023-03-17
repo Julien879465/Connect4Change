@@ -38,7 +38,7 @@ function Registration() {
   };
 
   return (
-    <>
+    <div className="flex flex-col w-full">
       <Navbar />
       <div className="flex flex-col items-center w-full mt-20">
         <div className="flex flex-row items-center justify-evenly w-full">
@@ -116,7 +116,7 @@ function Registration() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

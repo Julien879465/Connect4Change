@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Images/LogoConnect.png";
 import arcEnCiel from "../assets/Images/Arc-en-ciel.png";
 import home from "../assets/Icons-sidebar/home.png";
@@ -16,6 +16,9 @@ function SideBar() {
   const [focusPhone, setFocusPhone] = useState(false);
   const [focusFile, setFocusFile] = useState(false);
   const [focusHelp, setFocusHelp] = useState(false);
+
+  const shouldBeHiddenFor = ["/Connexion", "/", "/Logout"];
+  const location = useLocation();
 
   const handleFocusHome = () => {
     setFocusHome(true);
@@ -47,12 +50,20 @@ function SideBar() {
   };
 
   return (
-    <div className="flex items-center h-full py-10">
+    <div
+      className={`flex items-center h-full py-10 ${
+        shouldBeHiddenFor.includes(location.pathname) ? "hidden" : ""
+      }`}
+    >
       <div className="flex ml-10 flex-col h-full  w-[300px] bg-white rounded-xl justify-between drop-shadow-4xl">
         <div className="flex flex-col">
           <img className="w-[60%] m-6 mb-20" src={logo} alt="logo" />
           <div className="flex flex-col gap-6 font-medium">
-            <NavLink to="/" onFocus={handleFocusHome} onBlur={handleBlurHome}>
+            <NavLink
+              to="/Accueil"
+              onFocus={handleFocusHome}
+              onBlur={handleBlurHome}
+            >
               <div className="flex items-center flex-row ml-8">
                 <img
                   className="flex self-center w-[24px] h-[24px]
