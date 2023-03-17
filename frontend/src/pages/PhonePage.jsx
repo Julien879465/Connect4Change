@@ -75,13 +75,12 @@ function PhonePage() {
             elem.brand.toLowerCase().includes(search.toLowerCase()) ||
             elem.model.toLowerCase().includes(search.toLowerCase())
         ).length === 0 && (
-          <div className="flex flex-row w-[200%]">
+          <div className="flex items-center col-span-3  flex-col">
             <img
-              className=""
+              className="flex  w-[50%]"
               src="https://img.freepik.com/vecteurs-libre/funny-error-404-background-design_1167-219.jpg?w=2000"
               alt="404"
             />
-            <p>No phone found</p>
           </div>
         )}
       </div>
