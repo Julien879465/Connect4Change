@@ -45,6 +45,7 @@ function OnePhone() {
             model={phone.model}
             screen={phone.screen_size}
             indice={phone.antutu_indice}
+            system={phone.android_system}
           />
         ))}
       </div>
