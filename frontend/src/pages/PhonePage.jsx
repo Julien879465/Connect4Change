@@ -8,12 +8,14 @@ import SearchBar from "../components/SearchBar";
 function PhonePage() {
   const [search, setSearch] = useState(" ");
   const [phones, setPhones] = useState([]);
+
   const date = new Date().toLocaleDateString("fr-fr", {
     weekday: "long",
     year: "numeric",
     month: "short",
     day: "numeric",
   });
+
 
   useEffect(() => {
     expressAPI.get(`/telephones`).then((res) => {
@@ -32,7 +34,9 @@ function PhonePage() {
           <SearchBar search={search} setSearch={setSearch} />
         </div>
       </div>
+
       <p className="ml-3 mb-5 font-normal text-grey1">{date}</p>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
         {phones
           .filter(
