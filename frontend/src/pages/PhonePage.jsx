@@ -6,7 +6,7 @@ import deco from "../assets/Images/Deco.png";
 import SearchBar from "../components/SearchBar";
 
 function PhonePage() {
-  const [search, setSearch] = useState(" ");
+  const [search, setSearch] = useState("");
   const [phones, setPhones] = useState([]);
   const [date, setDate] = useState(new Date());
 
@@ -32,7 +32,6 @@ function PhonePage() {
       setPhones(res.data);
     });
   }, []);
-
   return (
     <div className="m-5">
       <div className=" font-bold text-2xl flex items-center justify-between gap-4">
@@ -52,24 +51,43 @@ function PhonePage() {
         {date.toLocaleDateString()} {formattedTime}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
-        {phones
-          .filter(
-            (elem) =>
-              elem.brand.toLowerCase().includes(search.toLowerCase()) ||
-              elem.model.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((phone) => (
-            <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
-              <PhoneCards
-                brand={phone.brand}
-                ram={phone.ram}
-                storage={phone.storage}
-                url={phone.url}
-                network={phone.network}
-                model={phone.model}
-              />
-            </Link>
-          ))}
+        {search.length > 0
+          ? phones
+              .filter(
+                (elem) =>
+                  elem.brand.toLowerCase().includes(search.toLowerCase()) ||
+                  elem.model.toLowerCase().includes(search.toLowerCase())
+              )
+              .map((phone) => (
+                <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
+                  <PhoneCards
+                    antutu={phone.antutu_indice}
+                    brand={phone.brand}
+                    ram={phone.ram}
+                    storage={phone.storage}
+                    url={phone.url}
+                    network={phone.network}
+                    model={phone.model}
+                    screen={phone.screen_size}
+                    category={phone.category_name}
+                  />
+                </Link>
+              ))
+          : phones.map((phone) => (
+              <Link key={phone.idphone} to={`/telephones/${phone.idphone}`}>
+                <PhoneCards
+                  antutu={phone.antutu_indice}
+                  brand={phone.brand}
+                  ram={phone.ram}
+                  storage={phone.storage}
+                  url={phone.url}
+                  network={phone.network}
+                  model={phone.model}
+                  screen={phone.screen_size}
+                  category={phone.category_name}
+                />
+              </Link>
+            ))}
         {phones.filter(
           (elem) =>
             elem.brand.toLowerCase().includes(search.toLowerCase()) ||
