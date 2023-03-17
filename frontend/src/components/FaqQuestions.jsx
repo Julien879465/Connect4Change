@@ -37,6 +37,8 @@ function FaqQuestions() {
               <details className="mb-4">
                 <summary className="font-semibold bg-gray-200 rounded-md py-2 px-4">
                   Comment fonctionne le système emmaüs connect?
+                  <br />
+                  <br />
                 </summary>
 
                 <span className="text-justify ">
