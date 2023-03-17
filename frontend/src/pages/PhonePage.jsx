@@ -8,24 +8,22 @@ import SearchBar from "../components/SearchBar";
 function PhonePage() {
   const [search, setSearch] = useState(" ");
   const [phones, setPhones] = useState([]);
-  const [date, setDate] = useState(new Date());
 
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    const timerID = setInterval(() => tick(), 1000);
+  // useEffect(() => {
+  //   // eslint-disable-next-line no-use-before-define
+  //   const timerID = setInterval(() => tick(), 1000);
 
-    return function cleanup() {
-      clearInterval(timerID);
-    };
+  //   return function cleanup() {
+  //     clearInterval(timerID);
+  //   };
+  // });
+
+  const date = new Date().toLocaleDateString("fr-fr", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  const formattedTime = date
-    .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    .replace(":", "h");
 
   useEffect(() => {
     expressAPI.get(`/telephones`).then((res) => {
@@ -44,9 +42,7 @@ function PhonePage() {
           <SearchBar search={search} setSearch={setSearch} />
         </div>
       </div>
-      <div className="pl-2 text-grey2 text-xs mb-8">
-        {date.toLocaleDateString()} {formattedTime}
-      </div>
+      <div className="pl-2 text-grey2 text-xs mb-8">{date}</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
         {phones
           .filter(

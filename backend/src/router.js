@@ -12,6 +12,7 @@ const fileControllers = require("./controllers/fileControllers");
 const auth = require("./middlewares/auth");
 
 const fileUpload = require("./middlewares/multer");
+const readCSV = require("./middlewares/parseCsv");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -50,7 +51,7 @@ router.get("/calcs", calcControllers.browse);
 router.get("/text", fileControllers.browse);
 router.get("/text/:id", fileControllers.read);
 router.put("/text/:id", fileControllers.edit);
-router.post("/text", fileUpload, fileControllers.add);
+router.post("/text", fileUpload, readCSV, fileControllers.add);
 router.delete("/text/:id", fileControllers.destroy);
 
 module.exports = router;
