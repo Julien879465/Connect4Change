@@ -155,7 +155,12 @@ function Home() {
         <PhoneResult />
       </div>
       <div className="flex flex-col w-full pl-8 gap-4 ">
-        <h1 className="text-xl ">Ajouter un téléphone</h1>
+        <h2 className="mb-8 font-fira font-medium text-2xl">
+          <span className="underline decoration-main-light decoration-4 underline-offset-8">
+            Ajouter
+          </span>{" "}
+          un téléphone
+        </h2>
         <form className="flex flex-row justify-between ">
           <div className=" flex flex-col justify-between">
             <label htmlFor="brand">
@@ -272,17 +277,6 @@ function Home() {
                 <option value="10%">10%</option>
               </select>
             </label>
-            <label>
-              <p className="text-lg">Résultat</p>
-              <input
-                className="w-full p-2 bg-grey3  border-solid border-2 border-grey-input rounded-lg "
-                type="text"
-                id="resultat"
-                value={resultat}
-                onChange={(event) => setResultat(event.target.value)}
-                required
-              />
-            </label>
             <button
               className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"
               type="submit"
@@ -294,14 +288,20 @@ function Home() {
         </form>
         <div className="w-1/3 flex flex-col self-center">
           <GaugeChart
-            className={`${showgauge ? "hidden" : "flex"}`}
+            className={`${showgauge ? "flex" : "hidden"}`}
             id="gauge-chart1"
             animate={false}
             nrOfLevels={5}
             colors={["#00ACB0", "#54A05C", "#FECC38", "#FFAB1D", "#FF3838"]}
             percent={0.75}
           />
-          <p className="text-yellow self-center">Catégorie : 4 - A</p>
+          <p
+            className={`${
+              showgauge ? "flex text-yellow self-center" : "hidden"
+            }`}
+          >
+            Catégorie : 4 - A
+          </p>
           <button
             className="bg-yellow rounded-full block w-full p-2 mt-10 text-white"
             type="submit"
