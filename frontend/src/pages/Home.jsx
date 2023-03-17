@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QRCode from "react-qr-code";
-import { useParams } from "react-router-dom";
 
 import FormButton from "../components/FormButton";
 import deco from "../assets/Images/deco.png";
 import PhoneResult from "../components/PhoneResult";
 
-import { useCurrentPhoneContext } from "../contexts/CurrentPhoneContext";
 import expressAPI from "../services/expressAPI";
 import {
   antutuVal,
@@ -31,7 +29,6 @@ function Home() {
   const [qrData, setQrData] = useState([]);
   const [date, setDate] = useState(new Date());
 
-  // const { ram, storage } = useCurrentPhoneContext();
   const [ram, setRam] = useState([]);
   const [storage, setStorage] = useState([]);
   const [idphone, setIdphone] = useState("");
@@ -103,7 +100,7 @@ function Home() {
     console.log(categoryName);
     console.log(phoneIdphone);
     await expressAPI
-      .post("/etats", { name, weighting, phoneIdphone })
+      .post("/etats", { name, weighting, phoneIdphone: idphone })
       .then((res) => {
         console.log(res.data);
       })
