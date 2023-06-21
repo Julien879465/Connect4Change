@@ -36,7 +36,7 @@ const TotalManager = require("./TotalManager");
 const PhoneManager = require("./PhoneManager");
 const StateManager = require("./StateManager");
 const CalcManager = require("./CalcManager");
-const FileManager = require("./fileManager");
+const FileManager = require("./FileManager");
 
 models.user = new UserManager();
 models.user.setDatabase(pool);
