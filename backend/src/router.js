@@ -8,7 +8,11 @@ const phoneControllers = require("./controllers/phoneControllers");
 const totalControllers = require("./controllers/totalControllers");
 const stateControllers = require("./controllers/stateControllers");
 const calcControllers = require("./controllers/calcControllers");
+const fileControllers = require("./controllers/fileControllers");
 const auth = require("./middlewares/auth");
+
+const fileUpload = require("./middlewares/multer");
+const readCSV = require("./middlewares/parseCsv");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -42,6 +46,15 @@ router.put("/etats/:id", stateControllers.edit);
 router.post("/etats", stateControllers.add);
 router.delete("/etats/:id", stateControllers.destroy);
 
-router.get("/calc", calcControllers.browse);
+router.get("/calcs", calcControllers.browse);
+router.get("/calcs/:id", calcControllers.read);
+
+router.post("/calcs", calcControllers.add);
+
+router.get("/text", fileControllers.browse);
+router.get("/text/:id", fileControllers.read);
+router.put("/text/:id", fileControllers.edit);
+router.post("/text", fileUpload, readCSV, fileControllers.add);
+router.delete("/text/:id", fileControllers.destroy);
 
 module.exports = router;

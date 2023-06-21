@@ -42,7 +42,11 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
-
+LOCK TABLES `phone` WRITE;
+/*!40000 ALTER TABLE `phone` DISABLE KEYS */;
+INSERT INTO `phone` VALUES (1,'Wiko','View 4 (v830)',6.52,'4G',10,92411,3,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/01/Wiko-View-4.png'),(2,'Samsung','GALAXY S10',6.1,'4G',9,415000,8,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/02/4-a-59-12.png'),(3,'Huawei',' P20 Lite',5.84,'4G',8,74399,4,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/06/4-a-59-12.png'),(4,'XiamiI','MI 10',6.67,'5G',10,571288,8,256,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-56.png'),(5,'Nokia','7.2',6.3,'4G',9,148113,6,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-47.png'),(6,'Honor','9X Midnight Black',6.59,'4G',9,136599,4,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-46.png'),(7,'Oppo','A72',6.5,'4G',10,150413,4,128,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-39.png'),(8,'One plus','Nord n100',6.52,'4G',10,142188,4,64,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-35.png'),(9,'Huawei','Mate 30 pro',6.53,'5G',10,508699,8,256,'https://www.indicereparabilite.fr/wp-content/uploads/2021/06/4-a-59-10.png'),(10,'Wiko','Y61',6,'4G',10,50000,1,16,'https://www.indicereparabilite.fr/wp-content/uploads/2021/08/6-a-79-42.png');
+/*!40000 ALTER TABLE `phone` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 -- -----------------------------------------------------
@@ -60,6 +64,22 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`state` (
     REFERENCES `hackathon`.`phone` (`idphone`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+LOCK TABLES `state` WRITE;
+/*!40000 ALTER TABLE `state` DISABLE KEYS */;
+INSERT INTO `state` VALUES (1,'RECONDITIONNE','5%',1),(2,'RECONDITIONNE','5%',2),(3,'RECONDITIONNE','5%',3),(4,'RECONDITIONNE','5%',4),(5,'RECONDITIONNE','5%',5),(6,'RECONDITIONNE','5%',6),(7,'RECONDITIONNE','5%',7),(8,'RECONDITIONNE','5%',8),(9,'RECONDITIONNE','5%',9),(10,'RECONDITIONNE','5%',10);
+/*!40000 ALTER TABLE `state` ENABLE KEYS */;
+UNLOCK TABLES;
+-- -----------------------------------------------------
+-- Table hackathon.file
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS hackathon.file (
+  idfile INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(155) NULL,
+  filename LONGTEXT NOT NULL,
+  PRIMARY KEY (idfile))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -86,6 +106,11 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`total` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
+LOCK TABLES `total` WRITE;
+/*!40000 ALTER TABLE `total` DISABLE KEYS */;
+INSERT INTO `total` VALUES (1,54,66,44,164,172,'3 - B',1),(2,80,72,123,275,289,'4 - A',2),(3,60,66,44,170,179,'3 - B',3),(4,80,80,164,324,340,'4 - A',4),(5,70,72,49,191,201,'3 - B',5),(6,60,72,49,181,190,'3 - B',6),(7,60,72,57,189,198,'3 - B',7),(8,60,66,49,175,184,'3 - B',8),(9,80,80,150,310,326,'4 - A',9),(10,30,66,40,136,143,'2 - C',10);
+/*!40000 ALTER TABLE `total` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- -----------------------------------------------------
 -- Table `hackathon`.`user`
@@ -99,6 +124,23 @@ CREATE TABLE IF NOT EXISTS `hackathon`.`user` (
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+
+
+
+-- -----------------------------------------------------
+-- Table `hackathon`.`file`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `hackathon`.`file` (
+  `idfile` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(155) NULL,
+  `filename` LONGTEXT NOT NULL,
+  PRIMARY KEY (`idfile`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+ALTER TABLE `hackathon`.`file` 
+ADD COLUMN `data` VARCHAR(255) NOT NULL AFTER `filename`;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

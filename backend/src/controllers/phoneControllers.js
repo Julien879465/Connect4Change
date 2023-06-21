@@ -2,7 +2,7 @@ const models = require("../models");
 
 const browse = (req, res) => {
   models.phone
-    .findAll()
+    .findAllPhones()
     .then(([rows]) => {
       res.send(rows);
     })
@@ -14,7 +14,7 @@ const browse = (req, res) => {
 
 const read = (req, res) => {
   models.phone
-    .find(req.params.id)
+    .findPhone(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
@@ -51,14 +51,30 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const phone = req.body;
+  const screenSize = parseInt(req.body.screenSize, 10);
+  const ram = parseInt(req.body.ram, 10);
+  const storage = parseInt(req.body.storage, 10);
+  const antutuIndice = parseInt(req.body.antutuIndice, 10);
+  const { brand, model, network, androidSystem, url } = req.body;
+
+  const phone = {
+    brand,
+    model,
+    network,
+    screenSize,
+    androidSystem,
+    antutuIndice,
+    ram,
+    storage,
+    url,
+  };
 
   // TODO validations (length, format...)
 
   models.phone
     .insert(phone)
     .then(([result]) => {
-      res.location(`/phones/${result.insertId}`).sendStatus(201);
+      res.status(201).send({ idphone: result.insertId });
     })
     .catch((err) => {
       console.error(err);
