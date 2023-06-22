@@ -33,7 +33,9 @@ function Registration() {
         .then(() => navigate("/Connexion"))
         .catch((err) => console.error(err));
     } else {
-      toastError("Veuillez renseigner votre email et votre statut");
+      toastError(
+        "Veuillez renseigner votre nom, email, et un mot de passe valide"
+      );
     }
   };
 
@@ -99,12 +101,16 @@ function Registration() {
                   Mot de passe
                 </label>
                 <input
-                  className="border border-grey3 h-10 rounded mb-10"
+                  className="border border-grey3 h-10 rounded "
                   type="password"
                   id="password"
                   value={password}
                   onChange={handlePasswordChange}
                 />
+                <p className="mb-10 text-slate-400">
+                  Le mot de passe doit contenir au moins une minuscule, une
+                  majuscule et un chiffre.
+                </p>
               </div>
               <button
                 type="submit"
